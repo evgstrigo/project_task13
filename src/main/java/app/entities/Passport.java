@@ -1,7 +1,5 @@
 package app.entities;
 
-import app.util.LocalDateUtil;
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -10,7 +8,6 @@ import org.hibernate.validator.constraints.Length;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import java.time.LocalDate;
@@ -21,6 +18,7 @@ import java.time.LocalDate;
  */
 
 @Entity
+@Table(name = "passport")
 @Data
 @NoArgsConstructor
 @ApiModel(description = "This is passenger's passport model")
@@ -28,105 +26,94 @@ public class Passport {
 
 
     /**
-     * Id of passenger. Generates automatically by DB <br>
-     * In task #1 it's not specified, <br>
+     * Id of passenger. Generates automatically by DB <p>
+     * In task #1 it's not specified,
      * but I think this entity should have similar primary key (not on field seriesAndNumber)
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     @Setter(AccessLevel.NONE)
-    @ApiModelProperty(example = "0", notes = "This is id")
+    @ApiModelProperty(example = "1", notes = "This is id")
     private Long id;
 
 
     /**
-     * Min length 2, max 25<br>
-     * Not null
+     * First name specified in passport
      */
-    @NotNull
+    @Column(name = "first_name")
+    @Nullable
     @Length(min = 2, max = 25)
     @ApiModelProperty(example = "Eugenio", notes = "This is first name", required = true)
     private String firstName;
 
 
     /**
-     * Min length 2, max 25<br>
-     * Not null
+     * Last name specified in passport
      */
-    @NotNull
+    @Column(name = "last_name")
+    @NonNull
     @Length(min = 2, max = 25)
     @ApiModelProperty(example = "Strigo", notes = "This is last name", required = true)
     private String lastName;
 
 
     /**
-     * Nullable
+     * Middle name in passport, if present.<p> This field is not required
      */
+    @Column(name = "middle_name")
     @ApiModelProperty(example = "Viktorovich", notes = "This is middle name", required = false)
     private String middleName;
 
 
     /**
-     * Could have values "m"/ "M" / "f" / "F"  in EN<br>
-     * Not null
+     * Gender in passport.<p> Could have values "m"/ "M" / "f" / "F" / "м"/ "М" / "ж" / "Ж" in EN & RU
      */
-    @NotNull
+    @Column(name = "gender")
+    @NonNull
     @Pattern(regexp = "[mMfFмМжЖ]")
     @ApiModelProperty(example = "M", notes = "This is gender", required = true)
     private String gender;
 
 
     /**
-     * Min length 2, max 25<br>
-     * Not null
+     * Birthplace specified in passport
      */
-    @NotNull
+    @Column(name = "birthplace")
+    @NonNull
     @Length(min = 2, max = 25)
     @ApiModelProperty(example = "Minsk", notes = "This is birthplace", required = true)
     private String birthplace;
-//
-//
+
+
     /**
-     * Min length 2, max 25<br>
-     * Not null
+     * Residence registration specified in passport
      */
-    @NotNull
+    @Column(name = "residence_registration")
+    @NonNull
     @Length(min = 2, max = 25)
     @ApiModelProperty(example = "Moscow, Kremlin", notes = "This is residence registration", required = true)
     private String residenceRegistration;
-//
-//
+
+
     /**
-     * Has format dd-MM-yyyy. (i.e. 31-05-2020)<br>
-     * Not null
+     * Date of birth specified in passport<p>
+     * Has format dd-MM-yyyy.
      */
-    @NotNull
+    @Column(name = "date_of_birth")
+    @NonNull
     @Past
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     @ApiModelProperty(example = "31-05-2020", notes = "This is date of birth", required = true)
     private LocalDate dateOfBirth;
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = LocalDateUtil.createLocalDateFromString(dateOfBirth);
-    }
-//
-//
+
     /**
-     * Unique<br>
-     * Not null
+     * Serial number of passport
      */
     @Column(name = "series_and_number", unique = true)
-    @NotNull
-    @ApiModelProperty(example = "12 34 123456", notes = "This is serial number", required = true)
-    private String seriesAndNumber;
-
-
-    /**
-     * Bidirectional to app.entities.{@link Passenger}
-     */
-    @OneToOne(mappedBy = "passport",
-            cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
-    @JsonBackReference
-    private Passenger passenger;
+    @NonNull
+    @ApiModelProperty(example = "3526202", notes = "This is serial number", required = true)
+    private int seriesAndNumber;
 
 }

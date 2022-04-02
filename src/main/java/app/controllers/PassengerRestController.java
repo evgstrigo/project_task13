@@ -7,7 +7,6 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 /**
@@ -21,7 +20,7 @@ import java.util.List;
 
 @Api(tags = "Passengers", description = "Passenger control")
 @RestController
-@RequestMapping("/api/passengers")
+@RequestMapping("/passengers")
 public class PassengerRestController {
 
     /**
@@ -40,7 +39,6 @@ public class PassengerRestController {
 
     /**
      * Maps GET-request
-     *
      * @return List of all passengers
      */
     @ApiOperation(value = "Getting all passengers list from DB")
@@ -51,9 +49,8 @@ public class PassengerRestController {
 
     /**
      * Maps GET-request with path variable
-     *
      * @param id id of concrete passenger
-     * @return {@link Passenger} with specified id
+     * @return Passenger with specified id
      */
     @ApiOperation(value = "Getting passenger by Id from DB")
     @GetMapping("/{id}")
@@ -64,18 +61,16 @@ public class PassengerRestController {
 
     /**
      * Maps POST-request
-     *
      * @param passenger new passenger to be added to DB
      */
     @ApiOperation(value = "Adding new passenger to DB")
     @PostMapping()
     public void addNewPassenger(@RequestBody Passenger passenger) {
-        passengerService.save(passenger);
+            passengerService.save(passenger);
     }
 
     /**
      * Maps PUT-request
-     *
      * @param passenger passenger (present in DB) to be updated to DB
      */
     @ApiOperation(value = "Updating passenger from DB")

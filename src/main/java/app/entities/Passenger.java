@@ -1,19 +1,14 @@
 package app.entities;
 
-import app.repositories.PassengerRepository;
-import app.services.PassengerServiceImpl;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.validator.constraints.Length;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import java.time.LocalDate;
 
@@ -22,6 +17,7 @@ import java.time.LocalDate;
  */
 
 @Entity
+@Table(name = "passenger")
 @Data
 @NoArgsConstructor
 @ApiModel(description = "This is passenger model")
@@ -33,32 +29,69 @@ public class Passenger {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     @Setter(AccessLevel.NONE)
-    @ApiModelProperty(example = "0", notes = "This is id")
+    @ApiModelProperty(example = "1", notes = "This is id")
     private long id;
 
 
     /**
-     * Has format email@email.ru <br>
-     * Not null
+     * Email of passenger. Has format email@email.ru
      */
     @Column(name = "email", unique = true)
-    @NotNull
+    @NonNull
     @Email
     @ApiModelProperty(example = "evgstrigo@mail.ru", notes = "This is email", required = true)
     private String email;
 
 
     /**
-     * Bidirectional to app.entities.{@link Passport} <br>
-     * a @NotNull is deactivated for tests (because it's necessary to add correct passport id into dataset)
+     * First name of passenger.
      */
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
-    @JoinColumn(name = "passport_id")
-//    @NotNull
+    @Column(name = "first_name")
+    @NonNull
+    @Length(min = 2, max = 25)
+    @ApiModelProperty(example = "Eugenio", notes = "This is first name", required = true)
+    private String firstName;
+
+
+    /**
+     * Last name of passenger.
+     */
+    @Column(name = "last_name")
+    @NonNull
+    @Length(min = 2, max = 25)
+    @ApiModelProperty(example = "Strigo", notes = "This is last name", required = true)
+    private String lastName;
+
+
+    /**
+     * Middle name of passenger, if present.<p> This field is not required
+     */
+    @Column(name = "middle_name")
+    @ApiModelProperty(example = "Viktorovich", notes = "This is middle name")
+    private String middleName;
+
+
+    /**
+     * Date of birth of passenger.<p>
+     * Has format dd-MM-yyyy.
+     */
+    @Column(name = "date_of_birth")
+    @NonNull
+    @Past
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    @ApiModelProperty(example = "31-05-1989", notes = "This is date of birth", required = true)
+    private LocalDate dateOfBirth;
+
+
+    /**
+     * Passport of passenger.<p> Is another entity <p>  @see app.entities.{@link app.entities.Passport}
+     */
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "passport_id", referencedColumnName = "id")
+    @NonNull
     @ApiModelProperty(example = "passport", notes = "This is passport", required = true)
-    @JsonManagedReference
     private Passport passport;
 
 }
-

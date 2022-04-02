@@ -1,7 +1,6 @@
 package app.services;
 
 import app.entities.Passenger;
-import app.entities.Passport;
 import app.repositories.PassengerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,9 +47,9 @@ public class PassengerServiceImpl implements PassengerService {
 
 
     /**
-     * Returns passenger from DB by passenger's id.<br>
-     * Passenger's id is specified in method argument.<br>
-     * @throws NoSuchElementException if passenger with specified id is not found
+     * Returns passenger from DB by passenger's id.<p>
+     * Passenger's id is specified in method argument.<p>
+     * throws NoSuchElementException if passenger with specified id is not found
      */
     @Override
     public Passenger findById(Long id) {
@@ -61,16 +60,12 @@ public class PassengerServiceImpl implements PassengerService {
 
 
     /**
-     * Saves or updates passenger to DB.<br>
-     * Passenger entity is specified in method argument.<br>
-     * Getting passport and then setting current passenger into passport  for bidirectional
+     * Saves or updates passenger to DB.<p>
+     * Passenger entity is specified in method argument.
      */
     @Override
-    public Passenger save(Passenger passenger) {
-        Passport passport = passenger.getPassport();
-        passport.setPassenger(passenger);
+    public void save(Passenger passenger) {
         passengerRepository.save(passenger);
-        return passenger;
     }
 
 
