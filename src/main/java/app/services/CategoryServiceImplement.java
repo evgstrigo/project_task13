@@ -15,7 +15,6 @@ import java.util.List;
 @Service
 @Transactional(readOnly = true)
 public class CategoryServiceImplement implements  CategoryService{
-
     private final CategoryRepository categoryRepository;
 
     @Autowired
