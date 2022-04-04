@@ -36,7 +36,7 @@ public class Route {
      * No deleting on cascade
      */
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
-    @JoinColumn(name = "destination_id", referencedColumnName = "id", insertable = false, updatable = false)
+    @JoinColumn(name = "destination_from", referencedColumnName = "id")
     @NonNull
     private Destination from;
 
@@ -46,7 +46,7 @@ public class Route {
      * No deleting on cascade
      */
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
-    @JoinColumn(name = "destination_id", referencedColumnName = "id", insertable = false, updatable = false)
+    @JoinColumn(name = "destination_to", referencedColumnName = "id")
     @NonNull
     private Destination to;
 
