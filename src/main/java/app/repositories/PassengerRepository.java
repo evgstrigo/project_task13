@@ -10,12 +10,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PassengerRepository extends JpaRepository<Passenger, Long> {
-
-    /**
-     * At this moment method is only for testing
-     * @param firstName
-     * @return Passenger object
-     */
-    Passenger findByFirstName(String firstName);
-
 }
