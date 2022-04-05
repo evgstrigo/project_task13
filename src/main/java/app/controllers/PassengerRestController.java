@@ -2,6 +2,7 @@ package app.controllers;
 
 import app.entities.Passenger;
 import app.services.PassengerService;
+import app.util.PassengerAndPassportCreator;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

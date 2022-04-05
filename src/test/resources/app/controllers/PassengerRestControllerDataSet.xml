@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <Passport
+            first_name = "Ivan"
+            last_name = "Ivanov"
+            middle_name = "Ivanovich"
+            gender = "M"
+            birthplace = "Voronezh"
+            residence_registration = "Moscow, Kremlin"
+            date_of_birth = "2020-10-10"
+            series_and_number = "12 34 123456"
+    />
+    <Passenger email = "sev@mail.ru" passport_id="6"/>
+
+
+</dataset>
