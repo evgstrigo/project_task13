@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Class helps to add some passenger to DB for testing
+ * Class helps to add some passenger to DB in init-method
  */
 public class PassengerAndPassportCreator {
 
@@ -88,18 +88,12 @@ public class PassengerAndPassportCreator {
         passenger5.setPassport(passport5);
 
 
-        passport1.setPassenger(passenger1);
-        passport2.setPassenger(passenger2);
-        passport3.setPassenger(passenger3);
-        passport4.setPassenger(passenger4);
-        passport5.setPassenger(passenger5);
-
-
         passengerList.add(passenger1);
         passengerList.add(passenger2);
         passengerList.add(passenger3);
         passengerList.add(passenger4);
         passengerList.add(passenger5);
+
 
         for (Passenger passenger : passengerList) {
             passengerService.save(passenger);

@@ -30,7 +30,7 @@ public interface PassengerService {
      * Saves or updates passenger to DB.<p>
      * Passenger entity is specified in method argument.
      */
-    void save(Passenger passenger);
+    Passenger save(Passenger passenger);
 
 
     /**
