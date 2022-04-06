@@ -32,7 +32,7 @@ public class DataInitializer {
     }
 
     @PostConstruct
-    public void addTenPassengersToDB() {
+    public void addFivePassengersToDB() {
         PassengerAndPassportCreator.createFivePassengerAndSaveInDB(passengerService);
     }
 }

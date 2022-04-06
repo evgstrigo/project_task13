@@ -34,12 +34,13 @@ public class Passenger {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
-    @ApiModelProperty(example = "1", notes = "This is id")
+    @ApiModelProperty(example = "0", notes = "This is id")
     private long id;
 
 
     /**
-     * Email of passenger. Has format email@email.ru
+     * Has format email@email.ru <br>
+     * Not null
      */
     @Column(name = "email", unique = true)
     @NotNull
@@ -48,13 +49,13 @@ public class Passenger {
     private String email;
 
 
-
     /**
-     * Passport of passenger.<p> Is another entity <p>  @see app.entities.{@link app.entities.Passport}
+     * Bidirectional to app.entities.{@link Passport} <br>
+     * a @NotNull is deactivated for tests (because it's necessary to add correct passport id into dataset)
      */
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "passport_id")
-    @NotNull
+//    @NotNull
     @ApiModelProperty(example = "passport", notes = "This is passport", required = true)
     @JsonManagedReference
     private Passport passport;
