@@ -35,12 +35,11 @@ public class Passport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
-    @ApiModelProperty(example = "1", notes = "This is id")
+    @ApiModelProperty(example = "0", notes = "This is id")
     private Long id;
 
 
     /**
-     * First name specified in passport<br>
      * Min length 2, max 25<br>
      * Not null
      */
@@ -51,7 +50,6 @@ public class Passport {
 
 
     /**
-     * Last name specified in passport<br>
      * Min length 2, max 25<br>
      * Not null
      */
@@ -62,7 +60,6 @@ public class Passport {
 
 
     /**
-     * Middle name in passport, if present.<br>
      * Nullable
      */
     @ApiModelProperty(example = "Viktorovich", notes = "This is middle name", required = false)
@@ -70,7 +67,6 @@ public class Passport {
 
 
     /**
-     * Gender in passport.<br>
      * Could have values "m"/ "M" / "f" / "F"  in EN<br>
      * Not null
      */
@@ -81,7 +77,6 @@ public class Passport {
 
 
     /**
-     * Birthplace specified in passport<br>
      * Min length 2, max 25<br>
      * Not null
      */
@@ -92,7 +87,6 @@ public class Passport {
 //
 //
     /**
-     * Residence registration specified in passport<br>
      * Min length 2, max 25<br>
      * Not null
      */
@@ -103,7 +97,6 @@ public class Passport {
 //
 //
     /**
-     * Date of birth specified in passport<br>
      * Has format dd-MM-yyyy. (i.e. 31-05-2020)<br>
      * Not null
      */
@@ -114,14 +107,12 @@ public class Passport {
     private LocalDate dateOfBirth;
 
     public void setDateOfBirth(String dateOfBirth) {
-        System.out.println("Setters starts to work");
-       this.dateOfBirth = LocalDateUtil.createLocalDateFromString(dateOfBirth);
+        this.dateOfBirth = LocalDateUtil.createLocalDateFromString(dateOfBirth);
     }
 //
 //
     /**
-     * Serial number of passport<br>
-     * Has unique constraint<br>
+     * Unique<br>
      * Not null
      */
     @Column(name = "series_and_number", unique = true)
@@ -129,7 +120,10 @@ public class Passport {
     @ApiModelProperty(example = "12 34 123456", notes = "This is serial number", required = true)
     private String seriesAndNumber;
 
-//
+
+    /**
+     * Bidirectional to app.entities.{@link Passenger}
+     */
     @OneToOne(mappedBy = "passport",
             cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
     @JsonBackReference
