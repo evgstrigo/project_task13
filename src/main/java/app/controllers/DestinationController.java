@@ -62,7 +62,10 @@ public class DestinationController {
     @PostMapping
     public ResponseEntity<?> addDestination(@RequestBody Destination destination) {
         destinationService.save(destination);
-        return new ResponseEntity<>( HttpStatus.CREATED);
+        Destination destination1 = destinationService.findBySity(destination.getSity());
+        return destination1 != null
+                ? new ResponseEntity<>(destination1, HttpStatus.OK)
+                : new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
     }
 
     /**
@@ -76,6 +79,8 @@ public class DestinationController {
         destination.setId(id);
         destinationService.save(destination);
         Destination destination1 = destinationService.findById(id);
-        return new ResponseEntity<>(destination1, HttpStatus.OK);
+        return destination.equals(destination1)
+                ? new ResponseEntity<>(destination1, HttpStatus.OK)
+                : new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
     }
 }
