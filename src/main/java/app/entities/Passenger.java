@@ -1,2 +1,9 @@
-package app.entities;public class Passenger {
+package app.entities;
+
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue(value = "passenger")
+public class Passenger extends User {
 }
