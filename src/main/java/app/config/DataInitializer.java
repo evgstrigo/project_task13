@@ -1,5 +1,6 @@
 package app.config;
 
+import lombok.extern.log4j.Log4j2;
 import app.entities.Category;
 import app.services.CategoryService;
 import app.services.PassengerService;
@@ -68,6 +69,8 @@ public class DataInitializer {
         destination.setTimezone(TimeZone.getTimeZone("Europe/Moscow"));
         ds.save(destination);
         System.out.println("DataInitializer сработал!");
+        log.info("Тест логгера");
+
 
         createCategory();
     }
