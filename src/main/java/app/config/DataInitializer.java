@@ -1,5 +1,6 @@
 package app.config;
 
+import lombok.extern.log4j.Log4j2;
 <<<<<<< src/main/java/app/config/DataInitializer.java
 import app.entities.CountryCode;
 import app.entities.Destination;
@@ -21,6 +22,7 @@ import java.util.TimeZone;
  * Эти данные будут каждый раз создаваться заново при поднятии SessionFactory и удаляться из БД при её остановке.
  * Инжектьте и используйте здесь соответствующие сервисы ваших сущностей."
  */
+@Log4j2
 @Component
 public class DataInitializer {
 
@@ -51,6 +53,7 @@ public class DataInitializer {
         destination.setTimezone(TimeZone.getTimeZone("Europe/Moscow"));
         ds.save(destination);
         System.out.println("DataInitializer сработал!");
+        log.info("Тест логгера");
 
         createCategory();
     }
