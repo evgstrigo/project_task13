@@ -21,4 +21,6 @@ public abstract class User {
     private String firstName;
     private String LastName;
     private int age;
+    private String email;
+    private String password;
 }

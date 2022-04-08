@@ -1,2 +1,12 @@
-package app.repositories;public class UserRepository {
+package app.repositories;
+
+
+import app.entities.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
+    User findByFirstName(String name);
+    User findByEmail(String email);
 }
