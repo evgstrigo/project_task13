@@ -79,7 +79,7 @@ public class Route {
     @Column(name = "number_of_seats")
     @NonNull
     @Min(value = 1)
-    @Max(value = 500)
+    @Max(value = 999)
     private Integer numberOfSeats;
 
 
