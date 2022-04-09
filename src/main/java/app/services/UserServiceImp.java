@@ -10,6 +10,10 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Конкретная реализация сервиса User
+ */
+
 @Service
 @Transactional
 public class UserServiceImp implements UserService {

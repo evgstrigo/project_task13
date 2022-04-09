@@ -1,12 +1,17 @@
 package app.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import lombok.*;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+
+/**
+ * Класс потомок, также используем lombok для простоты настройки.
+ * @JsonDeserialize используется для настройки десериализации Json.
+ * @DiscriminatorValue в таблице базы данных User будет столбец admin указывающий
+ * на конкретный класс потомок.
+ */
 
 @Entity
 @DiscriminatorValue(value = "admin")
@@ -14,7 +19,10 @@ import javax.persistence.Entity;
 @NoArgsConstructor
 @Setter
 @Getter
+@JsonDeserialize(as = Admin.class)
 public class Admin extends User {
-
+    /**
+     * Поле описывает стаж работы в годах
+     */
     private int workExperienceInAge;
 }

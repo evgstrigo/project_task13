@@ -37,13 +37,13 @@ public class DataInitializer {
         userAdmin.setAge(35);
         userAdmin.setEmail("tyz_ft@list.ru");
         userAdmin.setPassword("lipin");
-        User userAirlineManager = new AirlineManager(true);
-        userAirlineManager.setFirstName("Anna");
-        userAirlineManager.setLastName("Ivanova");
-        userAirlineManager.setAge(25);
-        userAirlineManager.setEmail("ann@mail.ru");
-        userAirlineManager.setPassword("ivanova");
-        userService.addUser(userAirlineManager);
+        User userairlineManager = new AirlineManager(true);
+        userairlineManager.setFirstName("Anna");
+        userairlineManager.setLastName("Ivanova");
+        userairlineManager.setAge(25);
+        userairlineManager.setEmail("ann@mail.ru");
+        userairlineManager.setPassword("ivanova");
+        userService.addUser(userairlineManager);
         userService.addUser(userAdmin);
         System.out.println("initUser сработал!");
     }
