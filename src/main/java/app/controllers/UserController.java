@@ -40,14 +40,19 @@ public class UserController {
     @GetMapping("/{id}")
     public ResponseEntity<?> getUserById(@PathVariable Long id) throws Exception {
         User user = userService.findUserById(id);
-        return new ResponseEntity<>(user, HttpStatus.OK);
+        return user != null
+                ? new ResponseEntity<>(user, HttpStatus.OK)
+                : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     @ApiOperation("Create User")
     @PostMapping
     public ResponseEntity<?> createUser(@RequestBody User user) {
         userService.addUser(user);
-        return new ResponseEntity<>(HttpStatus.OK);
+        User userFromDb = userService.findUserByFirstName(user.getFirstName());
+        return userFromDb != null
+                ? new ResponseEntity<>(userFromDb, HttpStatus.OK)
+                : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     @ApiOperation("Update User by id")
@@ -55,7 +60,10 @@ public class UserController {
     public ResponseEntity<?> updateUser(@PathVariable Long id, @RequestBody User user) throws Exception {
         user.setId(id);
         userService.updateUser(id, user);
-        return new ResponseEntity<>(HttpStatus.OK);
+        User userFromDb = userService.findUserById(id);
+        return userFromDb.equals(user)
+                ? new ResponseEntity<>(userFromDb, HttpStatus.OK)
+                : new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
     }
 
     @ApiOperation("Delete User by id")

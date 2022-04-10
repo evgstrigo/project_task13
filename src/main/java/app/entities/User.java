@@ -8,6 +8,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 /**
  * Абстрактный класс который описывает основные поля для классов потомков пользователей
@@ -24,9 +25,10 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Setter
 @Getter
+@ToString
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn
-@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.EXTERNAL_PROPERTY,  property = "type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, visible = true)
 @JsonSubTypes({
         @JsonSubTypes.Type(value = Admin.class, name = "admin"),
         @JsonSubTypes.Type(value = AirlineManager.class, name = "airline_manager"),
@@ -66,4 +68,17 @@ public abstract class User {
      */
     @ApiModelProperty(example = "password", notes = "This is password")
     private String password;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return age == user.age && Objects.equals(id, user.id) && Objects.equals(firstName, user.firstName) && Objects.equals(LastName, user.LastName) && Objects.equals(email, user.email) && Objects.equals(password, user.password);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, LastName, age, email, password);
+    }
 }
