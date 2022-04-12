@@ -95,20 +95,3 @@ public class Route {
 
 }
 
-/**
- *  This is FAKE entity for main Route entity
- */
-@Entity
-class Category {
-    @Id
-    private Long id;
-}
-
-/**
- *  This is FAKE entity for main Route entity
- */
-@Entity
-class Destination {
-    @Id
-    private Long id;
-}
