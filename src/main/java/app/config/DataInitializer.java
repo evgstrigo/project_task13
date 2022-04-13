@@ -1,9 +1,16 @@
 package app.config;
 
+<<<<<<< src/main/java/app/config/DataInitializer.java
 import app.entities.Admin;
 import app.entities.AirlineManager;
 import app.entities.User;
 import app.services.UserService;
+=======
+import app.entities.Category;
+import app.services.CategoryService;
+import app.services.PassengerService;
+import app.util.PassengerAndPassportCreator;
+>>>>>>> src/main/java/app/config/DataInitializer.java
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -17,16 +24,45 @@ import javax.annotation.PostConstruct;
 @Component
 public class DataInitializer {
 
+<<<<<<< src/main/java/app/config/DataInitializer.java
+
+=======
+    private final PassengerService passengerService;
+    public final CategoryService categoryService;
     private final UserService userService;
 
     @Autowired
-    public DataInitializer(UserService userService) {
+    public DataInitializer(PassengerService passengerService, CategoryService categoryService, UserService userService) {
+        this.passengerService = passengerService;
+        this.categoryService = categoryService;
         this.userService = userService;
     }
 
+
+>>>>>>> src/main/java/app/config/DataInitializer.java
     @PostConstruct
     public void init() {
         System.out.println("DataInitializer сработал!");
+
+        createCategory();
+    }
+
+    @PostConstruct
+    public void addFivePassengersToDB() {
+        PassengerAndPassportCreator.createFivePassengerAndSaveInDB(passengerService);
+    }
+
+    /**
+     * Метод создания и записи в БД новых сущностей класса Category.
+     * При необходимости можно добавить новые категории здесь.
+     */
+    private void createCategory() {
+        Category business = new Category("BUSINESS");
+        Category economy = new Category("ECONOMY");
+
+        categoryService.save(business);
+        categoryService.save(economy);
+        System.out.println("Категории \"Busines\" и \"Economy\" созданы и сохранены в БД!");
     }
 
     @PostConstruct

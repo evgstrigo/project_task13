@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <Passenger email = "abc@mail.ru"/>
+    <Passenger email = "def@mail.ru"/>
+    <Passenger email = "ghi@mail.ru"/>
+    <Passenger email = "jkl@mail.ru"/>
+    <Passenger email = "xyz@mail.ru"/>
+</dataset>
