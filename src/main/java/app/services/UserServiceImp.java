@@ -52,8 +52,7 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public void updateUser(Long id, User user) {
-        user.setId(id);
+    public void updateUser(User user) {
         userRepository.save(user);
     }
 

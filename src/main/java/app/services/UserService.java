@@ -38,7 +38,7 @@ public interface UserService {
     /**
      * Обновление пользователя
      */
-    void updateUser(Long id, User user);
+    void updateUser(User user);
 
     /**
      * Удаление пользователя

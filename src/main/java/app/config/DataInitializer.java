@@ -67,13 +67,13 @@ public class DataInitializer {
 
     @PostConstruct
     public void initUser() {
-        User userAdmin = new Admin(10);
+        User userAdmin = new Admin();
         userAdmin.setFirstName("Viktor");
         userAdmin.setLastName("Lipin");
         userAdmin.setAge(35);
         userAdmin.setEmail("tyz_ft@list.ru");
         userAdmin.setPassword("lipin");
-        User userairlineManager = new AirlineManager(true);
+        User userairlineManager = new AirlineManager();
         userairlineManager.setFirstName("Anna");
         userairlineManager.setLastName("Ivanova");
         userairlineManager.setAge(25);

@@ -55,13 +55,12 @@ public class UserController {
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @ApiOperation("Update User by id")
-    @PutMapping("/{id}")
-    public ResponseEntity<?> updateUser(@PathVariable Long id, @RequestBody User user) throws Exception {
-        user.setId(id);
-        userService.updateUser(id, user);
+    @ApiOperation("Update User")
+    @PutMapping
+    public ResponseEntity<?> updateUser(@RequestBody User user) throws Exception {
+        userService.updateUser(user);
         User userFromDb = userService.findUserById(id);
-        return userFromDb.equals(user)
+        return userFromDb != null
                 ? new ResponseEntity<>(userFromDb, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
     }

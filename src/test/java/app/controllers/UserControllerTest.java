@@ -61,7 +61,7 @@ class UserControllerTest {
 
     @Test
     void createUser() throws Exception {
-        User user = new Admin(4);
+        User user = new Admin();
         user.setId(3L);
         user.setFirstName("Petr");
         user.setLastName("Petrov");
@@ -76,18 +76,19 @@ class UserControllerTest {
 
     @Test
     void updateUser() throws Exception {
-        User user = new Admin(4);
+        User user = new Admin();
+        user.setId(1L);
         user.setFirstName("Vladimir");
         user.setLastName("Zhirinovsky");
         user.setAge(75);
         user.setEmail("zhirinovsky@gmail.com");
         user.setPassword("petrov");
 
-        mockMvc.perform(put(URL + "/3").contentType(MediaType.APPLICATION_JSON)
+        mockMvc.perform(put(URL).contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(user)))
                 .andExpect(status().isOk());
 
-        mockMvc.perform(get(URL + "/3"))
+        mockMvc.perform(get(URL + "/1"))
                 .andExpect(jsonPath("$.firstName").value("Vladimir"))
                 .andExpect(jsonPath("$.lastName").value("Zhirinovsky"))
                 .andExpect(jsonPath("$.email").value("zhirinovsky@gmail.com"));
