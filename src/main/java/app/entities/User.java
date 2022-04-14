@@ -12,7 +12,7 @@ import java.util.Objects;
 
 /**
  * Абстрактный класс который описывает основные поля для классов потомков пользователей
- * таких как Admin, Passenger, AirlineManager.
+ * таких как Admin, AirlineManager.
  * Для сохранения пользователей в базе данных используется SINGLE_TABLE, т.е. все зависимые
  * классы будут храниться в одной таблице User.
  * Т.к. Json не знает как десериализовать абстрактные класс, используются @JsonTypeInfo.
@@ -31,8 +31,8 @@ import java.util.Objects;
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, visible = true)
 @JsonSubTypes({
         @JsonSubTypes.Type(value = Admin.class, name = "admin"),
-        @JsonSubTypes.Type(value = AirlineManager.class, name = "airline_manager"),
-        @JsonSubTypes.Type(value = Passenger.class, name = "passenger") }
+        @JsonSubTypes.Type(value = AirlineManager.class, name = "airline_manager")
+        }
 )
 @ApiModel("This is abstract class User")
 public abstract class User {
