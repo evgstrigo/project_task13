@@ -1,6 +1,5 @@
 package app.config;
 
-<<<<<<< src/main/java/app/config/DataInitializer.java
 import app.entities.Admin;
 import app.entities.AirlineManager;
 import app.entities.User;
@@ -10,7 +9,6 @@ import app.entities.Category;
 import app.services.CategoryService;
 import app.services.PassengerService;
 import app.util.PassengerAndPassportCreator;
->>>>>>> src/main/java/app/config/DataInitializer.java
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -24,8 +22,6 @@ import javax.annotation.PostConstruct;
 @Component
 public class DataInitializer {
 
-<<<<<<< src/main/java/app/config/DataInitializer.java
-
 =======
     private final PassengerService passengerService;
     public final CategoryService categoryService;
@@ -38,8 +34,6 @@ public class DataInitializer {
         this.userService = userService;
     }
 
-
->>>>>>> src/main/java/app/config/DataInitializer.java
     @PostConstruct
     public void init() {
         System.out.println("DataInitializer сработал!");
