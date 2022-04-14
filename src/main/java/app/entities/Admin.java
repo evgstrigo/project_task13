@@ -21,8 +21,4 @@ import javax.persistence.Entity;
 @Getter
 @JsonDeserialize(as = Admin.class)
 public class Admin extends User {
-    /**
-     * Поле описывает стаж работы в годах
-     */
-    private int workExperienceInAge;
 }

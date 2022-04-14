@@ -24,8 +24,4 @@ import javax.persistence.Entity;
 @Getter
 @JsonDeserialize(as = AirlineManager.class)
 public class AirlineManager extends User {
-    /**
-     * Поле описывающее наличие высшего образования
-     */
-    private boolean higherEducation;
 }
