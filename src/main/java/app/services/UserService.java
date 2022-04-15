@@ -1,7 +1,7 @@
 package app.services;
 
 
-import app.entities.User;
+import app.entities.AbstractUser;
 
 import java.util.List;
 
@@ -13,32 +13,32 @@ public interface UserService {
     /**
      * Поиск всех пользователей
      */
-    List<User> findAll();
+    List<AbstractUser> findAll();
 
     /**
      * поиск по идентификатору
      */
-    User findUserById(Long id) throws Exception;
+    AbstractUser findUserById(Long id) throws Exception;
 
     /**
      * Поиск по имени пользователя
      */
-    User findUserByFirstName(String name);
+    AbstractUser findUserByFirstName(String name);
 
     /**
      * Поиск по электронной почте пользователя
      */
-    User findUserByEmail(String email);
+    AbstractUser findUserByEmail(String email);
 
     /**
      * Сохранение пользователя
      */
-    void addUser(User user);
+    void addUser(AbstractUser user);
 
     /**
      * Обновление пользователя
      */
-    void updateUser(User user);
+    void updateUser(AbstractUser user);
 
     /**
      * Удаление пользователя

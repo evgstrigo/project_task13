@@ -1,83 +1,30 @@
 package app.entities;
 
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.*;
+import org.springframework.beans.factory.annotation.Qualifier;
 
-import javax.persistence.*;
-import java.util.Objects;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 
 /**
- * Абстрактный класс который описывает основные поля для классов потомков пользователей
- * таких как Admin, AirlineManager.
- * Для сохранения пользователей в базе данных используется SINGLE_TABLE, т.е. все зависимые
- * классы будут храниться в одной таблице User.
- * Т.к. Json не знает как десериализовать абстрактные класс, используются @JsonTypeInfo.
- * Для простоты настройки класса используем lombok.
- *
+ * Класс потомок, также используем lombok для простоты настройки.
+ * @JsonDeserialize используется для настройки десериализации Json.
+ * @DiscriminatorValue в таблице базы данных User будет столбец admin указывающий
+ * на конкретный класс потомок.
  */
 
 @Entity
+@DiscriminatorValue(value = "user")
 @AllArgsConstructor
-@NoArgsConstructor
 @Setter
 @Getter
-@ToString
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn
-@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, visible = true)
-@JsonSubTypes({
-        @JsonSubTypes.Type(value = Admin.class, name = "admin"),
-        @JsonSubTypes.Type(value = AirlineManager.class, name = "airline_manager")
-        }
-)
-@ApiModel("This is abstract class User")
-public abstract class User {
-    /**
-     * Идентификатор абстрактного класса
-     */
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @ApiModelProperty(example = "1", notes = "This is id")
-    private Long id;
-    /**
-     * Имя пользователя
-     */
-    @ApiModelProperty(example = "Ivan", notes = "This is id")
-    private String firstName;
-    /**
-     * Фамилия пользователя
-     */
-    @ApiModelProperty(example = "Ivanov", notes = "This is lastName")
-    private String LastName;
-    /**
-     * Возраст пользователя
-     */
-    @ApiModelProperty(example = "50", notes = "This is Age")
-    private int age;
-    /**
-     * Электронный адресс
-     */
-    @ApiModelProperty(example = "ivan@mail.ru", notes = "This is Email")
-    private String email;
-    /**
-     * Пароль пользователя
-     */
-    @ApiModelProperty(example = "password", notes = "This is password")
-    private String password;
+@JsonDeserialize(as = User.class)
+public class User extends AbstractUser {
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return age == user.age && Objects.equals(id, user.id) && Objects.equals(firstName, user.firstName) && Objects.equals(LastName, user.LastName) && Objects.equals(email, user.email) && Objects.equals(password, user.password);
+    public void initMethod(@Qualifier(value = "userRole") ApplicationUserRole applicationUserRole) {
+        this.setRole(applicationUserRole);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, firstName, LastName, age, email, password);
-    }
 }

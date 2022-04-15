@@ -1,7 +1,7 @@
 package app.services;
 
 
-import app.entities.User;
+import app.entities.AbstractUser;
 import app.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,33 +26,33 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public List<User> findAll() {
+    public List<AbstractUser> findAll() {
         return userRepository.findAll();
     }
 
     @Override
-    public User findUserById(Long id) throws Exception {
-        Optional<User> userFromDb = userRepository.findById(id);
+    public AbstractUser findUserById(Long id) throws Exception {
+        Optional<AbstractUser> userFromDb = userRepository.findById(id);
         return userFromDb.orElseThrow(() -> new Exception("User with id :" + id + " not found"));
     }
 
     @Override
-    public User findUserByFirstName(String name) {
+    public AbstractUser findUserByFirstName(String name) {
         return userRepository.findByFirstName(name);
     }
 
     @Override
-    public User findUserByEmail(String email) {
+    public AbstractUser findUserByEmail(String email) {
         return userRepository.findByEmail(email);
     }
 
     @Override
-    public void addUser(User user) {
+    public void addUser(AbstractUser user) {
         userRepository.save(user);
     }
 
     @Override
-    public void updateUser(User user) {
+    public void updateUser(AbstractUser user) {
         userRepository.save(user);
     }
 

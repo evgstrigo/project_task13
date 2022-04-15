@@ -1,7 +1,7 @@
 package app.controllers;
 
+import app.entities.AbstractUser;
 import app.entities.Admin;
-import app.entities.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.springtestdbunit.TransactionDbUnitTestExecutionListener;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
@@ -36,7 +36,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 })
 @DatabaseSetup(value = "user.xml")
 @DatabaseTearDown(value = "user.xml")
-class UserControllerTest {
+class AbstractUserControllerTest {
     @Autowired
     private MockMvc mockMvc;
     @Autowired
@@ -61,7 +61,7 @@ class UserControllerTest {
 
     @Test
     void createUser() throws Exception {
-        User user = new Admin();
+        AbstractUser user = new Admin();
         user.setId(3L);
         user.setFirstName("Petr");
         user.setLastName("Petrov");
@@ -76,16 +76,16 @@ class UserControllerTest {
 
     @Test
     void updateUser() throws Exception {
-        User user = new Admin();
-        user.setId(1L);
-        user.setFirstName("Vladimir");
-        user.setLastName("Zhirinovsky");
-        user.setAge(75);
-        user.setEmail("zhirinovsky@gmail.com");
-        user.setPassword("petrov");
+        AbstractUser abstractUser = new Admin();
+        abstractUser.setId(1L);
+        abstractUser.setFirstName("Vladimir");
+        abstractUser.setLastName("Zhirinovsky");
+        abstractUser.setAge(75);
+        abstractUser.setEmail("zhirinovsky@gmail.com");
+        abstractUser.setPassword("petrov");
 
         mockMvc.perform(put(URL).contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(user)))
+                        .content(objectMapper.writeValueAsString(abstractUser)))
                 .andExpect(status().isOk());
 
         mockMvc.perform(get(URL + "/1"))

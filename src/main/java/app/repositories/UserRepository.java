@@ -1,7 +1,7 @@
 package app.repositories;
 
 
-import app.entities.User;
+import app.entities.AbstractUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -10,14 +10,14 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<AbstractUser, Long> {
     /**
      * Поиск User по имени пользователя
      */
-    User findByFirstName(String name);
+    AbstractUser findByFirstName(String name);
 
     /**
      * Поиск User по электронной почте пользователя
      */
-    User findByEmail(String email);
+    AbstractUser findByEmail(String email);
 }

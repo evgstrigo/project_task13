@@ -1,0 +1,406 @@
+[INFO ] 2022-04-15 15:12:02.286 [main] AirlineApplication - Started AirlineApplication in 5.939 seconds (JVM running for 6.843)
+[INFO ] 2022-04-15 15:19:27.612 [background-preinit] Version - HV000001: Hibernate Validator 6.0.13.Final
+[WARN ] 2022-04-15 15:19:27.632 [main] ImageBanner - Image banner not printable: class path resource [banner.txt] (class java.lang.IllegalStateException: 'Unable to read image banner source')
+[INFO ] 2022-04-15 15:19:27.690 [main] AirlineApplication - Starting AirlineApplication using Java 17.0.2 on BRD0036 with PID 11036 (C:\Users\sev\IdeaProjects\airline_project_2\security\target\classes started by sev in C:\Users\sev\IdeaProjects\airline_project_2\security)
+[INFO ] 2022-04-15 15:19:27.694 [main] AirlineApplication - The following profiles are active: dev,prod
+[INFO ] 2022-04-15 15:19:28.443 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2022-04-15 15:19:28.521 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 69 ms. Found 4 JPA repository interfaces.
+[INFO ] 2022-04-15 15:19:29.201 [main] TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+[INFO ] 2022-04-15 15:19:29.208 [main] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+[INFO ] 2022-04-15 15:19:29.208 [main] StandardService - Starting service [Tomcat]
+[INFO ] 2022-04-15 15:19:29.209 [main] StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.53]
+[INFO ] 2022-04-15 15:19:29.294 [main] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2022-04-15 15:19:29.294 [main] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1544 ms
+[INFO ] 2022-04-15 15:19:29.462 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2022-04-15 15:19:29.497 [main] Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+[INFO ] 2022-04-15 15:19:29.578 [main] Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[INFO ] 2022-04-15 15:19:29.674 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2022-04-15 15:19:29.972 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2022-04-15 15:19:29.984 [main] Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+[INFO ] 2022-04-15 15:19:31.660 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2022-04-15 15:19:31.669 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2022-04-15 15:19:32.233 [main] DataInitializer - Тест логгера
+[WARN ] 2022-04-15 15:19:32.300 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2022-04-15 15:19:32.994 [main] DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@116fe252, org.springframework.security.web.context.SecurityContextPersistenceFilter@7786c2e0, org.springframework.security.web.header.HeaderWriterFilter@55f29d39, org.springframework.security.web.authentication.logout.LogoutFilter@655875bb, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1c00a9f0, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@b22bebc, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@7b8b755d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@56c39949, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6101fd7d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3bd5dff5, org.springframework.security.web.session.SessionManagementFilter@c50d1b2, org.springframework.security.web.access.ExceptionTranslationFilter@299e245c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@55d35f7a]
+[INFO ] 2022-04-15 15:19:33.014 [main] PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] 2022-04-15 15:19:33.137 [main] WelcomePageHandlerMapping - Adding welcome page template: index
+[INFO ] 2022-04-15 15:19:33.234 [main] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+[INFO ] 2022-04-15 15:19:33.263 [main] TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+[INFO ] 2022-04-15 15:19:33.264 [main] DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] 2022-04-15 15:19:33.275 [main] DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] 2022-04-15 15:19:33.303 [main] ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] 2022-04-15 15:19:33.492 [main] AirlineApplication - Started AirlineApplication in 6.164 seconds (JVM running for 7.503)
+[INFO ] 2022-04-15 15:19:58.408 [http-nio-8888-exec-1] [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 2022-04-15 15:19:58.408 [http-nio-8888-exec-1] DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2022-04-15 15:19:58.409 [http-nio-8888-exec-1] DispatcherServlet - Completed initialization in 1 ms
+[INFO ] 2022-04-15 15:23:59.991 [background-preinit] Version - HV000001: Hibernate Validator 6.0.13.Final
+[WARN ] 2022-04-15 15:24:00.013 [main] ImageBanner - Image banner not printable: class path resource [banner.txt] (class java.lang.IllegalStateException: 'Unable to read image banner source')
+[INFO ] 2022-04-15 15:24:00.063 [main] AirlineApplication - Starting AirlineApplication using Java 17.0.2 on BRD0036 with PID 8300 (C:\Users\sev\IdeaProjects\airline_project_2\security\target\classes started by sev in C:\Users\sev\IdeaProjects\airline_project_2\security)
+[INFO ] 2022-04-15 15:24:00.066 [main] AirlineApplication - The following profiles are active: dev,prod
+[INFO ] 2022-04-15 15:24:00.832 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2022-04-15 15:24:00.911 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 73 ms. Found 4 JPA repository interfaces.
+[INFO ] 2022-04-15 15:24:01.611 [main] TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+[INFO ] 2022-04-15 15:24:01.619 [main] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+[INFO ] 2022-04-15 15:24:01.620 [main] StandardService - Starting service [Tomcat]
+[INFO ] 2022-04-15 15:24:01.620 [main] StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.53]
+[INFO ] 2022-04-15 15:24:01.700 [main] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2022-04-15 15:24:01.701 [main] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1577 ms
+[INFO ] 2022-04-15 15:24:01.857 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2022-04-15 15:24:01.899 [main] Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+[INFO ] 2022-04-15 15:24:01.984 [main] Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[INFO ] 2022-04-15 15:24:02.072 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2022-04-15 15:24:02.361 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2022-04-15 15:24:02.378 [main] Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+[INFO ] 2022-04-15 15:24:04.501 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2022-04-15 15:24:04.508 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2022-04-15 15:24:05.111 [main] DataInitializer - Тест логгера
+[WARN ] 2022-04-15 15:24:05.172 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2022-04-15 15:24:05.880 [main] DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4ac2b4c6, org.springframework.security.web.context.SecurityContextPersistenceFilter@78977b59, org.springframework.security.web.header.HeaderWriterFilter@51d50b5f, org.springframework.security.web.authentication.logout.LogoutFilter@5702232d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@77eb0e47, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@52b2713a, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@326489c4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c914364, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@58ec04f4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@50165a6d, org.springframework.security.web.session.SessionManagementFilter@74727e41, org.springframework.security.web.access.ExceptionTranslationFilter@18ada4e1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@272cec71]
+[INFO ] 2022-04-15 15:24:05.900 [main] PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] 2022-04-15 15:24:06.065 [main] WelcomePageHandlerMapping - Adding welcome page template: index
+[INFO ] 2022-04-15 15:24:06.197 [main] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+[INFO ] 2022-04-15 15:24:06.219 [main] TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+[INFO ] 2022-04-15 15:24:06.220 [main] DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] 2022-04-15 15:24:06.235 [main] DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] 2022-04-15 15:24:06.266 [main] ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] 2022-04-15 15:24:06.475 [main] AirlineApplication - Started AirlineApplication in 6.827 seconds (JVM running for 7.743)
+[INFO ] 2022-04-15 16:19:11.220 [background-preinit] Version - HV000001: Hibernate Validator 6.0.13.Final
+[WARN ] 2022-04-15 16:19:11.231 [main] ImageBanner - Image banner not printable: class path resource [banner.txt] (class java.lang.IllegalStateException: 'Unable to read image banner source')
+[INFO ] 2022-04-15 16:19:11.273 [main] AirlineApplication - Starting AirlineApplication using Java 17.0.2 on BRD0036 with PID 10536 (C:\Users\sev\IdeaProjects\airline_project_2\security\target\classes started by sev in C:\Users\sev\IdeaProjects\airline_project_2\security)
+[INFO ] 2022-04-15 16:19:11.275 [main] AirlineApplication - The following profiles are active: dev,prod
+[INFO ] 2022-04-15 16:19:12.058 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2022-04-15 16:19:12.125 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 59 ms. Found 4 JPA repository interfaces.
+[INFO ] 2022-04-15 16:19:12.849 [main] TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+[INFO ] 2022-04-15 16:19:12.858 [main] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+[INFO ] 2022-04-15 16:19:12.858 [main] StandardService - Starting service [Tomcat]
+[INFO ] 2022-04-15 16:19:12.859 [main] StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.53]
+[INFO ] 2022-04-15 16:19:12.983 [main] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2022-04-15 16:19:12.983 [main] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1662 ms
+[INFO ] 2022-04-15 16:19:13.114 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2022-04-15 16:19:13.150 [main] Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+[INFO ] 2022-04-15 16:19:13.227 [main] Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[INFO ] 2022-04-15 16:19:13.295 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2022-04-15 16:19:13.544 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2022-04-15 16:19:13.556 [main] Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+[INFO ] 2022-04-15 16:19:15.203 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2022-04-15 16:19:15.209 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2022-04-15 16:19:15.722 [main] DataInitializer - Тест логгера
+[WARN ] 2022-04-15 16:19:15.772 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2022-04-15 16:19:16.519 [main] DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@85eabca, org.springframework.security.web.context.SecurityContextPersistenceFilter@4ac2b4c6, org.springframework.security.web.header.HeaderWriterFilter@331eb953, org.springframework.security.web.authentication.logout.LogoutFilter@766ab25b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@678c0310, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7df994ec, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3f8c4bcf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@50165a6d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@a703934, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@175377d3, org.springframework.security.web.session.SessionManagementFilter@2c39c520, org.springframework.security.web.access.ExceptionTranslationFilter@628d6320, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@14a3a66c]
+[INFO ] 2022-04-15 16:19:16.539 [main] PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] 2022-04-15 16:19:16.698 [main] WelcomePageHandlerMapping - Adding welcome page template: index
+[INFO ] 2022-04-15 16:19:16.820 [main] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+[INFO ] 2022-04-15 16:19:16.840 [main] TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+[INFO ] 2022-04-15 16:19:16.841 [main] DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] 2022-04-15 16:19:16.863 [main] DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] 2022-04-15 16:19:16.889 [main] ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] 2022-04-15 16:19:17.118 [main] AirlineApplication - Started AirlineApplication in 6.172 seconds (JVM running for 7.129)
+[INFO ] 2022-04-15 16:43:46.529 [background-preinit] Version - HV000001: Hibernate Validator 6.0.13.Final
+[WARN ] 2022-04-15 16:43:46.545 [main] ImageBanner - Image banner not printable: class path resource [banner.txt] (class java.lang.IllegalStateException: 'Unable to read image banner source')
+[INFO ] 2022-04-15 16:43:46.594 [main] AirlineApplication - Starting AirlineApplication using Java 17.0.2 on BRD0036 with PID 11300 (C:\Users\sev\IdeaProjects\airline_project_2\security\target\classes started by sev in C:\Users\sev\IdeaProjects\airline_project_2\security)
+[INFO ] 2022-04-15 16:43:46.598 [main] AirlineApplication - The following profiles are active: dev,prod
+[INFO ] 2022-04-15 16:43:47.309 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2022-04-15 16:43:47.380 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 64 ms. Found 5 JPA repository interfaces.
+[INFO ] 2022-04-15 16:43:48.225 [main] TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+[INFO ] 2022-04-15 16:43:48.234 [main] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+[INFO ] 2022-04-15 16:43:48.235 [main] StandardService - Starting service [Tomcat]
+[INFO ] 2022-04-15 16:43:48.235 [main] StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.53]
+[INFO ] 2022-04-15 16:43:48.345 [main] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2022-04-15 16:43:48.346 [main] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1693 ms
+[INFO ] 2022-04-15 16:43:48.532 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2022-04-15 16:43:48.579 [main] Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+[INFO ] 2022-04-15 16:43:48.673 [main] Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[INFO ] 2022-04-15 16:43:48.750 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2022-04-15 16:43:49.035 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2022-04-15 16:43:49.045 [main] Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+[INFO ] 2022-04-15 16:43:50.614 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2022-04-15 16:43:50.620 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2022-04-15 16:43:51.133 [main] DataInitializer - Тест логгера
+[INFO ] 2022-04-15 16:43:51.177 [main] DataInitializer - Роли добавились в лог
+[WARN ] 2022-04-15 16:43:51.216 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2022-04-15 16:43:51.832 [main] DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5817b0d1, org.springframework.security.web.context.SecurityContextPersistenceFilter@7510824, org.springframework.security.web.header.HeaderWriterFilter@11d474a, org.springframework.security.web.authentication.logout.LogoutFilter@372c428, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@68ac6e6e, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@29b61bb, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6ea1fc9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@766ab25b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6d4bb60f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@75e068dc, org.springframework.security.web.session.SessionManagementFilter@21553c3a, org.springframework.security.web.access.ExceptionTranslationFilter@17796f47, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@34a06981]
+[INFO ] 2022-04-15 16:43:51.854 [main] PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] 2022-04-15 16:43:51.981 [main] WelcomePageHandlerMapping - Adding welcome page template: index
+[INFO ] 2022-04-15 16:43:52.083 [main] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+[INFO ] 2022-04-15 16:43:52.102 [main] TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+[INFO ] 2022-04-15 16:43:52.103 [main] DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] 2022-04-15 16:43:52.114 [main] DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] 2022-04-15 16:43:52.138 [main] ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] 2022-04-15 16:43:52.316 [main] AirlineApplication - Started AirlineApplication in 6.086 seconds (JVM running for 7.458)
+[INFO ] 2022-04-15 16:52:33.211 [background-preinit] Version - HV000001: Hibernate Validator 6.0.13.Final
+[WARN ] 2022-04-15 16:52:33.219 [main] ImageBanner - Image banner not printable: class path resource [banner.txt] (class java.lang.IllegalStateException: 'Unable to read image banner source')
+[INFO ] 2022-04-15 16:52:33.258 [main] AirlineApplication - Starting AirlineApplication using Java 17.0.2 on BRD0036 with PID 8892 (C:\Users\sev\IdeaProjects\airline_project_2\security\target\classes started by sev in C:\Users\sev\IdeaProjects\airline_project_2\security)
+[INFO ] 2022-04-15 16:52:33.262 [main] AirlineApplication - The following profiles are active: dev,prod
+[INFO ] 2022-04-15 16:52:34.010 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2022-04-15 16:52:34.078 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 61 ms. Found 5 JPA repository interfaces.
+[INFO ] 2022-04-15 16:52:34.804 [main] TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+[INFO ] 2022-04-15 16:52:34.811 [main] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+[INFO ] 2022-04-15 16:52:34.811 [main] StandardService - Starting service [Tomcat]
+[INFO ] 2022-04-15 16:52:34.812 [main] StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.53]
+[INFO ] 2022-04-15 16:52:34.879 [main] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2022-04-15 16:52:34.879 [main] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1573 ms
+[INFO ] 2022-04-15 16:52:35.008 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2022-04-15 16:52:35.039 [main] Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+[INFO ] 2022-04-15 16:52:35.140 [main] Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[INFO ] 2022-04-15 16:52:35.208 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2022-04-15 16:52:35.615 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2022-04-15 16:52:35.633 [main] Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+[INFO ] 2022-04-15 16:52:37.785 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2022-04-15 16:52:37.793 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2022-04-15 16:52:38.350 [main] DataInitializer - Тест логгера
+[INFO ] 2022-04-15 16:52:38.390 [main] DataInitializer - Роли добавились в лог
+[WARN ] 2022-04-15 16:52:38.426 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2022-04-15 16:52:39.096 [main] DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@30b2d267, org.springframework.security.web.context.SecurityContextPersistenceFilter@48e859f7, org.springframework.security.web.header.HeaderWriterFilter@54418834, org.springframework.security.web.authentication.logout.LogoutFilter@3fb920d9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7dbc77ca, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7d583602, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@5a740449, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4ba32242, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@50cadbae, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4f66f2dd, org.springframework.security.web.session.SessionManagementFilter@6d21a69f, org.springframework.security.web.access.ExceptionTranslationFilter@719e8f9f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@64d0b8e3]
+[INFO ] 2022-04-15 16:52:39.119 [main] PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] 2022-04-15 16:52:39.238 [main] WelcomePageHandlerMapping - Adding welcome page template: index
+[INFO ] 2022-04-15 16:52:39.351 [main] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+[INFO ] 2022-04-15 16:52:39.371 [main] TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+[INFO ] 2022-04-15 16:52:39.372 [main] DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] 2022-04-15 16:52:39.411 [main] DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] 2022-04-15 16:52:39.459 [main] ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] 2022-04-15 16:52:39.690 [main] AirlineApplication - Started AirlineApplication in 6.814 seconds (JVM running for 7.661)
+[INFO ] 2022-04-15 17:25:54.133 [background-preinit] Version - HV000001: Hibernate Validator 6.0.13.Final
+[WARN ] 2022-04-15 17:25:54.186 [main] ImageBanner - Image banner not printable: class path resource [banner.txt] (class java.lang.IllegalStateException: 'Unable to read image banner source')
+[INFO ] 2022-04-15 17:25:54.235 [main] AirlineApplication - Starting AirlineApplication using Java 17.0.2 on BRD0036 with PID 9932 (C:\Users\sev\IdeaProjects\airline_project_2\security\target\classes started by sev in C:\Users\sev\IdeaProjects\airline_project_2\security)
+[INFO ] 2022-04-15 17:25:54.239 [main] AirlineApplication - The following profiles are active: dev,prod
+[INFO ] 2022-04-15 17:25:54.975 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2022-04-15 17:25:55.041 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60 ms. Found 5 JPA repository interfaces.
+[INFO ] 2022-04-15 17:25:55.719 [main] TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+[INFO ] 2022-04-15 17:25:55.726 [main] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+[INFO ] 2022-04-15 17:25:55.726 [main] StandardService - Starting service [Tomcat]
+[INFO ] 2022-04-15 17:25:55.726 [main] StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.53]
+[INFO ] 2022-04-15 17:25:55.790 [main] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2022-04-15 17:25:55.790 [main] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1499 ms
+[INFO ] 2022-04-15 17:25:55.944 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2022-04-15 17:25:55.974 [main] Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+[INFO ] 2022-04-15 17:25:56.043 [main] Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[INFO ] 2022-04-15 17:25:56.116 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2022-04-15 17:25:56.375 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2022-04-15 17:25:56.385 [main] Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+[INFO ] 2022-04-15 17:25:58.022 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2022-04-15 17:25:58.029 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2022-04-15 17:25:58.574 [main] DataInitializer - Тест логгера
+[INFO ] 2022-04-15 17:25:58.610 [main] DataInitializer - Роли добавились в лог
+[WARN ] 2022-04-15 17:25:58.646 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2022-04-15 17:25:59.261 [main] DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1b48784a, org.springframework.security.web.context.SecurityContextPersistenceFilter@fffb4a8, org.springframework.security.web.header.HeaderWriterFilter@152bb4cc, org.springframework.security.web.authentication.logout.LogoutFilter@6cb2d5ea, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@276e5add, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@394a7390, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@7ab17cf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3071d086, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@505bc480, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@26f0ab88, org.springframework.security.web.session.SessionManagementFilter@178f5b5b, org.springframework.security.web.access.ExceptionTranslationFilter@30b2d267, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3325f17]
+[INFO ] 2022-04-15 17:25:59.308 [main] PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] 2022-04-15 17:25:59.440 [main] WelcomePageHandlerMapping - Adding welcome page template: index
+[INFO ] 2022-04-15 17:25:59.551 [main] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+[INFO ] 2022-04-15 17:25:59.582 [main] TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+[INFO ] 2022-04-15 17:25:59.583 [main] DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] 2022-04-15 17:25:59.595 [main] DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] 2022-04-15 17:25:59.621 [main] ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] 2022-04-15 17:25:59.805 [main] AirlineApplication - Started AirlineApplication in 5.945 seconds (JVM running for 6.987)
+[INFO ] 2022-04-15 17:31:01.490 [background-preinit] Version - HV000001: Hibernate Validator 6.0.13.Final
+[WARN ] 2022-04-15 17:31:01.511 [main] ImageBanner - Image banner not printable: class path resource [banner.txt] (class java.lang.IllegalStateException: 'Unable to read image banner source')
+[INFO ] 2022-04-15 17:31:01.562 [main] AirlineApplication - Starting AirlineApplication using Java 17.0.2 on BRD0036 with PID 11032 (C:\Users\sev\IdeaProjects\airline_project_2\security\target\classes started by sev in C:\Users\sev\IdeaProjects\airline_project_2\security)
+[INFO ] 2022-04-15 17:31:01.567 [main] AirlineApplication - The following profiles are active: dev,prod
+[INFO ] 2022-04-15 17:31:02.231 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2022-04-15 17:31:02.289 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 5 JPA repository interfaces.
+[INFO ] 2022-04-15 17:31:02.850 [main] TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+[INFO ] 2022-04-15 17:31:02.856 [main] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+[INFO ] 2022-04-15 17:31:02.857 [main] StandardService - Starting service [Tomcat]
+[INFO ] 2022-04-15 17:31:02.857 [main] StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.53]
+[INFO ] 2022-04-15 17:31:02.931 [main] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2022-04-15 17:31:02.931 [main] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1308 ms
+[INFO ] 2022-04-15 17:31:03.056 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2022-04-15 17:31:03.089 [main] Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+[INFO ] 2022-04-15 17:31:03.169 [main] Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[INFO ] 2022-04-15 17:31:03.238 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2022-04-15 17:31:03.478 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2022-04-15 17:31:03.488 [main] Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+[INFO ] 2022-04-15 17:31:04.938 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2022-04-15 17:31:04.944 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2022-04-15 17:31:05.493 [main] DataInitializer - Тест логгера
+[INFO ] 2022-04-15 17:31:05.534 [main] DataInitializer - Роли добавились в лог
+[WARN ] 2022-04-15 17:31:05.567 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2022-04-15 17:31:06.186 [main] DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5d72dd86, org.springframework.security.web.context.SecurityContextPersistenceFilter@324e62e2, org.springframework.security.web.header.HeaderWriterFilter@690113f0, org.springframework.security.web.authentication.logout.LogoutFilter@1252d480, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@734eada1, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@157ff8f8, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@70e560ef, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@75eca6d8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2d10160a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@77228160, org.springframework.security.web.session.SessionManagementFilter@6f915016, org.springframework.security.web.access.ExceptionTranslationFilter@3ce4b0a8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@75a6cdb]
+[INFO ] 2022-04-15 17:31:06.231 [main] PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] 2022-04-15 17:31:06.348 [main] WelcomePageHandlerMapping - Adding welcome page template: index
+[INFO ] 2022-04-15 17:31:06.455 [main] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+[INFO ] 2022-04-15 17:31:06.474 [main] TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+[INFO ] 2022-04-15 17:31:06.475 [main] DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] 2022-04-15 17:31:06.487 [main] DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] 2022-04-15 17:31:06.512 [main] ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] 2022-04-15 17:31:06.678 [main] AirlineApplication - Started AirlineApplication in 5.565 seconds (JVM running for 6.472)
+[INFO ] 2022-04-15 17:32:19.434 [background-preinit] Version - HV000001: Hibernate Validator 6.0.13.Final
+[WARN ] 2022-04-15 17:32:19.459 [main] ImageBanner - Image banner not printable: class path resource [banner.txt] (class java.lang.IllegalStateException: 'Unable to read image banner source')
+[INFO ] 2022-04-15 17:32:19.522 [main] AirlineApplication - Starting AirlineApplication using Java 17.0.2 on BRD0036 with PID 11172 (C:\Users\sev\IdeaProjects\airline_project_2\security\target\classes started by sev in C:\Users\sev\IdeaProjects\airline_project_2\security)
+[INFO ] 2022-04-15 17:32:19.527 [main] AirlineApplication - The following profiles are active: dev,prod
+[INFO ] 2022-04-15 17:32:20.213 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2022-04-15 17:32:20.268 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 50 ms. Found 5 JPA repository interfaces.
+[INFO ] 2022-04-15 17:32:20.840 [main] TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+[INFO ] 2022-04-15 17:32:20.852 [main] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+[INFO ] 2022-04-15 17:32:20.852 [main] StandardService - Starting service [Tomcat]
+[INFO ] 2022-04-15 17:32:20.852 [main] StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.53]
+[INFO ] 2022-04-15 17:32:20.948 [main] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2022-04-15 17:32:20.948 [main] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1342 ms
+[INFO ] 2022-04-15 17:32:21.089 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2022-04-15 17:32:21.125 [main] Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+[INFO ] 2022-04-15 17:32:21.198 [main] Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[INFO ] 2022-04-15 17:32:21.270 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2022-04-15 17:32:21.519 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2022-04-15 17:32:21.527 [main] Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+[INFO ] 2022-04-15 17:32:23.078 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2022-04-15 17:32:23.086 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2022-04-15 17:32:23.648 [main] DataInitializer - Тест логгера
+[INFO ] 2022-04-15 17:32:23.698 [main] DataInitializer - Роли добавились в лог
+[WARN ] 2022-04-15 17:32:23.735 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2022-04-15 17:32:24.427 [main] DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@522fc988, org.springframework.security.web.context.SecurityContextPersistenceFilter@6cb2d5ea, org.springframework.security.web.header.HeaderWriterFilter@324e62e2, org.springframework.security.web.authentication.logout.LogoutFilter@46c47690, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@69bdcfbc, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@20f94e9a, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@996293a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2e9bff08, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a2bc71f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6adc90e9, org.springframework.security.web.session.SessionManagementFilter@75eca6d8, org.springframework.security.web.access.ExceptionTranslationFilter@690113f0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6c09d716]
+[INFO ] 2022-04-15 17:32:24.474 [main] PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] 2022-04-15 17:32:24.627 [main] WelcomePageHandlerMapping - Adding welcome page template: index
+[INFO ] 2022-04-15 17:32:24.737 [main] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+[INFO ] 2022-04-15 17:32:24.757 [main] TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+[INFO ] 2022-04-15 17:32:24.758 [main] DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] 2022-04-15 17:32:24.770 [main] DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] 2022-04-15 17:32:24.797 [main] ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] 2022-04-15 17:32:25.005 [main] AirlineApplication - Started AirlineApplication in 5.942 seconds (JVM running for 6.939)
+[INFO ] 2022-04-15 17:33:25.463 [background-preinit] Version - HV000001: Hibernate Validator 6.0.13.Final
+[WARN ] 2022-04-15 17:33:25.483 [main] ImageBanner - Image banner not printable: class path resource [banner.txt] (class java.lang.IllegalStateException: 'Unable to read image banner source')
+[INFO ] 2022-04-15 17:33:25.522 [main] AirlineApplication - Starting AirlineApplication using Java 17.0.2 on BRD0036 with PID 9324 (C:\Users\sev\IdeaProjects\airline_project_2\security\target\classes started by sev in C:\Users\sev\IdeaProjects\airline_project_2\security)
+[INFO ] 2022-04-15 17:33:25.524 [main] AirlineApplication - The following profiles are active: dev,prod
+[INFO ] 2022-04-15 17:33:26.142 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2022-04-15 17:33:26.196 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 5 JPA repository interfaces.
+[INFO ] 2022-04-15 17:33:26.802 [main] TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+[INFO ] 2022-04-15 17:33:26.809 [main] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+[INFO ] 2022-04-15 17:33:26.809 [main] StandardService - Starting service [Tomcat]
+[INFO ] 2022-04-15 17:33:26.810 [main] StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.53]
+[INFO ] 2022-04-15 17:33:26.881 [main] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2022-04-15 17:33:26.881 [main] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1312 ms
+[INFO ] 2022-04-15 17:33:27.020 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2022-04-15 17:33:27.058 [main] Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+[INFO ] 2022-04-15 17:33:27.138 [main] Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[INFO ] 2022-04-15 17:33:27.224 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2022-04-15 17:33:27.512 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2022-04-15 17:33:27.524 [main] Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+[INFO ] 2022-04-15 17:33:29.119 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2022-04-15 17:33:29.133 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2022-04-15 17:33:29.656 [main] DataInitializer - Тест логгера
+[INFO ] 2022-04-15 17:33:29.693 [main] DataInitializer - Роли добавились в лог
+[WARN ] 2022-04-15 17:33:29.728 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2022-04-15 17:33:30.350 [main] DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@996293a, org.springframework.security.web.context.SecurityContextPersistenceFilter@3ed1446c, org.springframework.security.web.header.HeaderWriterFilter@1018552d, org.springframework.security.web.authentication.logout.LogoutFilter@5aa026e9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4cb45048, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@3f213e97, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6adc90e9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@54151d07, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@20f94e9a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@26247027, org.springframework.security.web.session.SessionManagementFilter@2d2afbdf, org.springframework.security.web.access.ExceptionTranslationFilter@509e4d53, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@734eada1]
+[INFO ] 2022-04-15 17:33:30.402 [main] PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] 2022-04-15 17:33:30.538 [main] WelcomePageHandlerMapping - Adding welcome page template: index
+[INFO ] 2022-04-15 17:33:30.645 [main] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+[INFO ] 2022-04-15 17:33:30.663 [main] TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+[INFO ] 2022-04-15 17:33:30.664 [main] DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] 2022-04-15 17:33:30.700 [main] DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] 2022-04-15 17:33:30.727 [main] ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] 2022-04-15 17:33:30.943 [main] AirlineApplication - Started AirlineApplication in 5.777 seconds (JVM running for 6.556)
+[INFO ] 2022-04-15 17:45:20.663 [background-preinit] Version - HV000001: Hibernate Validator 6.0.13.Final
+[WARN ] 2022-04-15 17:45:20.676 [main] ImageBanner - Image banner not printable: class path resource [banner.txt] (class java.lang.IllegalStateException: 'Unable to read image banner source')
+[INFO ] 2022-04-15 17:45:20.736 [main] AirlineApplication - Starting AirlineApplication using Java 17.0.2 on BRD0036 with PID 7352 (C:\Users\sev\IdeaProjects\airline_project_2\security\target\classes started by sev in C:\Users\sev\IdeaProjects\airline_project_2\security)
+[INFO ] 2022-04-15 17:45:20.741 [main] AirlineApplication - The following profiles are active: dev,prod
+[INFO ] 2022-04-15 17:45:21.439 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2022-04-15 17:45:21.505 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 57 ms. Found 5 JPA repository interfaces.
+[INFO ] 2022-04-15 17:45:22.252 [main] TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+[INFO ] 2022-04-15 17:45:22.259 [main] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+[INFO ] 2022-04-15 17:45:22.260 [main] StandardService - Starting service [Tomcat]
+[INFO ] 2022-04-15 17:45:22.260 [main] StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.53]
+[INFO ] 2022-04-15 17:45:22.336 [main] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2022-04-15 17:45:22.336 [main] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1528 ms
+[INFO ] 2022-04-15 17:45:22.486 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2022-04-15 17:45:22.521 [main] Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+[INFO ] 2022-04-15 17:45:22.603 [main] Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[INFO ] 2022-04-15 17:45:22.676 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2022-04-15 17:45:22.932 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2022-04-15 17:45:22.958 [main] Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+[WARN ] 2022-04-15 17:45:23.720 [main] ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table abstract_user 
+       drop 
+       foreign key FKd8o2q49o331p17esp75io2g50" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table abstract_user 
+       drop 
+       foreign key FKd8o2q49o331p17esp75io2g50" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.10.jar:5.3.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.10.jar:5.3.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.10.jar:5.3.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.10.jar:5.3.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) [spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) [spring-context-5.3.10.jar:5.3.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) [spring-context-5.3.10.jar:5.3.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) [spring-context-5.3.10.jar:5.3.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) [spring-boot-2.5.5.jar:2.5.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) [spring-boot-2.5.5.jar:2.5.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) [spring-boot-2.5.5.jar:2.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) [spring-boot-2.5.5.jar:2.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) [spring-boot-2.5.5.jar:2.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332) [spring-boot-2.5.5.jar:2.5.5]
+	at app.AirlineApplication.main(AirlineApplication.java:25) [classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: Can't DROP 'FKd8o2q49o331p17esp75io2g50'; check that column/key exists
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:768) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:653) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:?]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	... 35 more
+[INFO ] 2022-04-15 17:45:24.780 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2022-04-15 17:45:24.787 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2022-04-15 17:45:25.284 [main] DataInitializer - Тест логгера
+[INFO ] 2022-04-15 17:45:25.318 [main] DataInitializer - Роли добавились в лог
+[WARN ] 2022-04-15 17:45:25.353 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2022-04-15 17:45:25.974 [main] DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@427946b9, org.springframework.security.web.context.SecurityContextPersistenceFilter@5d6cac57, org.springframework.security.web.header.HeaderWriterFilter@7bc46dde, org.springframework.security.web.authentication.logout.LogoutFilter@5eb89000, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@25865fca, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@276e5add, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@fe58644, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@13157620, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@23e54c8a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2ecb87b2, org.springframework.security.web.session.SessionManagementFilter@32dc895e, org.springframework.security.web.access.ExceptionTranslationFilter@a23b96b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@45594dfe]
+[INFO ] 2022-04-15 17:45:26.021 [main] PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] 2022-04-15 17:45:26.136 [main] WelcomePageHandlerMapping - Adding welcome page template: index
+[INFO ] 2022-04-15 17:45:26.249 [main] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+[INFO ] 2022-04-15 17:45:26.267 [main] TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+[INFO ] 2022-04-15 17:45:26.268 [main] DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] 2022-04-15 17:45:26.278 [main] DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] 2022-04-15 17:45:26.302 [main] ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] 2022-04-15 17:45:26.471 [main] AirlineApplication - Started AirlineApplication in 6.074 seconds (JVM running for 6.86)
+[INFO ] 2022-04-15 17:46:47.060 [background-preinit] Version - HV000001: Hibernate Validator 6.0.13.Final
+[WARN ] 2022-04-15 17:46:47.103 [main] ImageBanner - Image banner not printable: class path resource [banner.txt] (class java.lang.IllegalStateException: 'Unable to read image banner source')
+[INFO ] 2022-04-15 17:46:47.168 [main] AirlineApplication - Starting AirlineApplication using Java 17.0.2 on BRD0036 with PID 10224 (C:\Users\sev\IdeaProjects\airline_project_2\security\target\classes started by sev in C:\Users\sev\IdeaProjects\airline_project_2\security)
+[INFO ] 2022-04-15 17:46:47.174 [main] AirlineApplication - The following profiles are active: dev,prod
+[INFO ] 2022-04-15 17:46:48.107 [main] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2022-04-15 17:46:48.198 [main] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 84 ms. Found 5 JPA repository interfaces.
+[INFO ] 2022-04-15 17:46:48.946 [main] TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+[INFO ] 2022-04-15 17:46:48.956 [main] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+[INFO ] 2022-04-15 17:46:48.957 [main] StandardService - Starting service [Tomcat]
+[INFO ] 2022-04-15 17:46:48.957 [main] StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.53]
+[INFO ] 2022-04-15 17:46:49.049 [main] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2022-04-15 17:46:49.049 [main] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1795 ms
+[INFO ] 2022-04-15 17:46:49.219 [main] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2022-04-15 17:46:49.266 [main] Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+[INFO ] 2022-04-15 17:46:49.417 [main] Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[INFO ] 2022-04-15 17:46:49.530 [main] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2022-04-15 17:46:49.858 [main] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2022-04-15 17:46:49.868 [main] Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+[INFO ] 2022-04-15 17:46:51.693 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2022-04-15 17:46:51.700 [main] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2022-04-15 17:46:52.234 [main] DataInitializer - Тест логгера
+[INFO ] 2022-04-15 17:46:52.290 [main] DataInitializer - Роли добавились в лог
+[WARN ] 2022-04-15 17:46:52.329 [main] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2022-04-15 17:46:52.958 [main] DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@320ca97c, org.springframework.security.web.context.SecurityContextPersistenceFilter@1a345c6c, org.springframework.security.web.header.HeaderWriterFilter@3ed1446c, org.springframework.security.web.authentication.logout.LogoutFilter@7e474bd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@19faa9dc, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@21bf1b1f, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3c592c0c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@17a756db, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@175c4ae5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3979c6e8, org.springframework.security.web.session.SessionManagementFilter@54151d07, org.springframework.security.web.access.ExceptionTranslationFilter@1018552d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@69bdcfbc]
+[INFO ] 2022-04-15 17:46:53.018 [main] PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[INFO ] 2022-04-15 17:46:53.129 [main] WelcomePageHandlerMapping - Adding welcome page template: index
+[INFO ] 2022-04-15 17:46:53.250 [main] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+[INFO ] 2022-04-15 17:46:53.271 [main] TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+[INFO ] 2022-04-15 17:46:53.272 [main] DocumentationPluginsBootstrapper - Context refreshed
+[INFO ] 2022-04-15 17:46:53.284 [main] DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+[INFO ] 2022-04-15 17:46:53.313 [main] ApiListingReferenceScanner - Scanning for api listing references
+[INFO ] 2022-04-15 17:46:53.499 [main] AirlineApplication - Started AirlineApplication in 6.746 seconds (JVM running for 7.752)

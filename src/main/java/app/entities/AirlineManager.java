@@ -3,8 +3,8 @@ package app.entities;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -22,5 +22,11 @@ import javax.persistence.Entity;
 @Setter
 @Getter
 @JsonDeserialize(as = AirlineManager.class)
-public class AirlineManager extends User {
+public class AirlineManager extends AbstractUser {
+
+    @Override
+    public void initMethod(@Qualifier(value = "airlineManagerRole") ApplicationUserRole applicationUserRole) {
+        this.setRole(applicationUserRole);
+    }
+
 }

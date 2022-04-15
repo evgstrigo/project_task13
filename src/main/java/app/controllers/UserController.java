@@ -1,6 +1,6 @@
 package app.controllers;
 
-import app.entities.User;
+import app.entities.AbstractUser;
 import app.services.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -30,7 +30,7 @@ public class UserController {
     @ApiOperation("Get all Users")
     @GetMapping
     public ResponseEntity<?> getAllUsers() {
-        List<User> allUsersFromDb = userService.findAll();
+        List<AbstractUser> allUsersFromDb = userService.findAll();
         return allUsersFromDb != null
                 ? new ResponseEntity<>(allUsersFromDb, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -39,7 +39,7 @@ public class UserController {
     @ApiOperation("Get User by id")
     @GetMapping("/{id}")
     public ResponseEntity<?> getUserById(@PathVariable Long id) throws Exception {
-        User user = userService.findUserById(id);
+        AbstractUser user = userService.findUserById(id);
         return user != null
                 ? new ResponseEntity<>(user, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -47,9 +47,9 @@ public class UserController {
 
     @ApiOperation("Create User")
     @PostMapping
-    public ResponseEntity<?> createUser(@RequestBody User user) {
+    public ResponseEntity<?> createUser(@RequestBody AbstractUser user) {
         userService.addUser(user);
-        User userFromDb = userService.findUserByFirstName(user.getFirstName());
+        AbstractUser userFromDb = userService.findUserByFirstName(user.getFirstName());
         return userFromDb != null
                 ? new ResponseEntity<>(userFromDb, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -57,7 +57,7 @@ public class UserController {
 
     @ApiOperation("Update User")
     @PutMapping
-    public ResponseEntity<?> updateUser(@RequestBody User user) throws Exception {
+    public ResponseEntity<?> updateUser(@RequestBody AbstractUser user) throws Exception {
         userService.updateUser(user);
         return new ResponseEntity<>(HttpStatus.OK);
     }
