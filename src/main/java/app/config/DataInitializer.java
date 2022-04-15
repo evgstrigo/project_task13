@@ -4,7 +4,6 @@ import app.entities.Admin;
 import app.entities.AirlineManager;
 import app.entities.User;
 import app.services.UserService;
-=======
 import app.entities.Category;
 import app.services.CategoryService;
 import app.services.PassengerService;
@@ -22,7 +21,6 @@ import javax.annotation.PostConstruct;
 @Component
 public class DataInitializer {
 
-=======
     private final PassengerService passengerService;
     public final CategoryService categoryService;
     private final UserService userService;
