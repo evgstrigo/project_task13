@@ -59,10 +59,7 @@ public class UserController {
     @PutMapping
     public ResponseEntity<?> updateUser(@RequestBody User user) throws Exception {
         userService.updateUser(user);
-        User userFromDb = userService.findUserById(id);
-        return userFromDb != null
-                ? new ResponseEntity<>(userFromDb, HttpStatus.OK)
-                : new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @ApiOperation("Delete User by id")

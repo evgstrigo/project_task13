@@ -16,7 +16,6 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue(value = "admin")
 @AllArgsConstructor
-@NoArgsConstructor
 @Setter
 @Getter
 @JsonDeserialize(as = Admin.class)

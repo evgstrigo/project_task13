@@ -12,6 +12,7 @@ import app.services.PassengerService;
 import app.util.PassengerAndPassportCreator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
 import javax.annotation.PostConstruct;
 
 /**
@@ -36,15 +37,13 @@ public class DataInitializer {
 
     @PostConstruct
     public void init() {
-        System.out.println("DataInitializer сработал!");
-        log.info("Тест логгера");
-
-
+        initUsers();
+        addFivePassengersToDB();
         createCategory();
+        System.out.println("DataInitializer сработал!");
     }
 
-    @PostConstruct
-    public void addFivePassengersToDB() {
+    private void addFivePassengersToDB() {
         PassengerAndPassportCreator.createFivePassengerAndSaveInDB(passengerService);
         log.info("Тест логгера");
     }
@@ -62,8 +61,7 @@ public class DataInitializer {
         System.out.println("Категории \"Busines\" и \"Economy\" созданы и сохранены в БД!");
     }
 
-    @PostConstruct
-    public void initUser() {
+    private void initUsers() {
         User userAdmin = new Admin();
         userAdmin.setFirstName("Viktor");
         userAdmin.setLastName("Lipin");

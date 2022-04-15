@@ -19,7 +19,6 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue(value = "airline_manager")
 @AllArgsConstructor
-@NoArgsConstructor
 @Setter
 @Getter
 @JsonDeserialize(as = AirlineManager.class)

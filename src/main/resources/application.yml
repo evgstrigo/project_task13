@@ -17,8 +17,11 @@ spring:
     hikari:
       leak-detection-threshold: 60000
       maximum-pool-size: 20
+  banner:
+    image:
+      location: banner.txt
   jpa:
-    show-sql: true
+    show-sql: false
     hibernate:
       ddl-auto: create
     properties:

@@ -1,6 +1,5 @@
 package app.entities;
 
-import ch.qos.logback.core.boolex.EvaluationException;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import io.swagger.annotations.ApiModel;
