@@ -1,16 +1,17 @@
 package app.config;
 
+
 import app.entities.Admin;
 import app.entities.AirlineManager;
 import app.entities.User;
 import app.services.UserService;
+import lombok.extern.log4j.Log4j2;
 import app.entities.Category;
 import app.services.CategoryService;
 import app.services.PassengerService;
 import app.util.PassengerAndPassportCreator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import javax.annotation.PostConstruct;
 
 /**
@@ -18,6 +19,7 @@ import javax.annotation.PostConstruct;
  * Эти данные будут каждый раз создаваться заново при поднятии SessionFactory и удаляться из БД при её остановке.
  * Инжектьте и используйте здесь соответствующие сервисы ваших сущностей."
  */
+@Log4j2
 @Component
 public class DataInitializer {
 
@@ -35,6 +37,8 @@ public class DataInitializer {
     @PostConstruct
     public void init() {
         System.out.println("DataInitializer сработал!");
+        log.info("Тест логгера");
+
 
         createCategory();
     }
@@ -42,6 +46,7 @@ public class DataInitializer {
     @PostConstruct
     public void addFivePassengersToDB() {
         PassengerAndPassportCreator.createFivePassengerAndSaveInDB(passengerService);
+        log.info("Тест логгера");
     }
 
     /**

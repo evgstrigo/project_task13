@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <destination id = "1" airport_code = "TSE" airport_name = "Astana" country_code = "KAZ_398"
+                 country_name = "Kazakhstan" sity = "Nur_Sultan" timezone = "Asia/Almaty"/>
+    <destination id = "2" airport_code = "ZBAA" airport_name = "Shoudu" country_code = "CHN_156"
+                 country_name = "China" sity = "Beijing" timezone = "Asia/Shanghai"/>
+</dataset>
