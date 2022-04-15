@@ -1,5 +1,10 @@
 package app.config;
 
+
+import app.entities.Admin;
+import app.entities.AirlineManager;
+import app.entities.User;
+import app.services.UserService;
 import lombok.extern.log4j.Log4j2;
 import app.entities.Category;
 import app.services.CategoryService;
@@ -20,13 +25,14 @@ public class DataInitializer {
 
     private final PassengerService passengerService;
     public final CategoryService categoryService;
+    private final UserService userService;
 
     @Autowired
-    public DataInitializer(PassengerService passengerService, CategoryService categoryService) {
+    public DataInitializer(PassengerService passengerService, CategoryService categoryService, UserService userService) {
         this.passengerService = passengerService;
         this.categoryService = categoryService;
+        this.userService = userService;
     }
-
 
     @PostConstruct
     public void init() {
@@ -54,5 +60,24 @@ public class DataInitializer {
         categoryService.save(business);
         categoryService.save(economy);
         System.out.println("Категории \"Busines\" и \"Economy\" созданы и сохранены в БД!");
+    }
+
+    @PostConstruct
+    public void initUser() {
+        User userAdmin = new Admin();
+        userAdmin.setFirstName("Viktor");
+        userAdmin.setLastName("Lipin");
+        userAdmin.setAge(35);
+        userAdmin.setEmail("tyz_ft@list.ru");
+        userAdmin.setPassword("lipin");
+        User userairlineManager = new AirlineManager();
+        userairlineManager.setFirstName("Anna");
+        userairlineManager.setLastName("Ivanova");
+        userairlineManager.setAge(25);
+        userairlineManager.setEmail("ann@mail.ru");
+        userairlineManager.setPassword("ivanova");
+        userService.addUser(userairlineManager);
+        userService.addUser(userAdmin);
+        System.out.println("initUser сработал!");
     }
 }

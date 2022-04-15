@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dataset>
+    <user dtype = "admin" id = "1" last_name = "Lipin" age = "35" email = "tyz_ft@list.ru" first_name = "Viktor"
+          password = "lipin" work_experience_in_age = "10"/>
+    <user dtype = "airline_manager" id = "2" last_name = "Ivanova" age = "25" email = "ann@mail.ru" first_name = "Anna"
+          password = "ivanova" higher_education = "true"/>
+</dataset>
