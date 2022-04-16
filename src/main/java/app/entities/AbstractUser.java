@@ -1,11 +1,14 @@
 package app.entities;
 
-import app.util.ApplicationUserRolesCreator;
+import app.services.ApplicationUserRoleService;
+import app.util.ApplicationUserRolesUtil;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,7 +18,6 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Абстрактный класс который описывает основные поля для классов потомков пользователей
@@ -87,22 +89,10 @@ public abstract class AbstractUser implements UserDetails {
     private ApplicationUserRole role;
 
 
-
-    /**
-     * Сюда в наследниках будем прописывать инициализацию конкретной роли
-     */
-    @PostConstruct
-    public void initMethod(ApplicationUserRole applicationUserRole) {
-        if (this.getClass() == Admin.class) {
-            System.out.println("Admin iscreated");
-        }
-    }
-
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<SimpleGrantedAuthority> grantedAuthorityList = new ArrayList<>();
-        grantedAuthorityList.add(new SimpleGrantedAuthority(this.role.getAuthority()));
+        grantedAuthorityList.add(new SimpleGrantedAuthority("ROLE_" + this.role.getAuthority()));
         return grantedAuthorityList;
     }
 
@@ -130,4 +120,5 @@ public abstract class AbstractUser implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
 }

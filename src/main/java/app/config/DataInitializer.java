@@ -3,8 +3,8 @@ package app.config;
 
 import app.entities.*;
 import app.services.ApplicationUserRoleService;
-import app.services.UserService;
-import app.util.ApplicationUserRolesCreator;
+import app.services.ApplicationUserService;
+import app.util.ApplicationUserRolesUtil;
 import lombok.extern.log4j.Log4j2;
 import app.services.CategoryService;
 import app.services.PassengerService;
@@ -25,26 +25,26 @@ public class DataInitializer {
 
     private final PassengerService passengerService;
     public final CategoryService categoryService;
-    private final UserService userService;
+    private final ApplicationUserService applicationUserService;
     private final ApplicationUserRoleService applicationUserRoleService;
 
     @Autowired
     public DataInitializer(PassengerService passengerService,
                            CategoryService categoryService,
-                           UserService userService,
+                           ApplicationUserService applicationUserService,
                            ApplicationUserRoleService applicationUserRoleService) {
         this.passengerService = passengerService;
         this.categoryService = categoryService;
-        this.userService = userService;
+        this.applicationUserService = applicationUserService;
         this.applicationUserRoleService = applicationUserRoleService;
     }
 
     @PostConstruct
     public void init() {
+        addRolesToDB();
         initUsers();
         addFivePassengersToDB();
         createCategory();
-        addRolesToDB();
         System.out.println("DataInitializer сработал!");
     }
 
@@ -56,7 +56,7 @@ public class DataInitializer {
     }
 
     private void addRolesToDB() {
-        ApplicationUserRolesCreator.createAllRolesAndSaveInDB(applicationUserRoleService);
+        ApplicationUserRolesUtil.createAllRolesAndSaveInDB(applicationUserRoleService);
         log.info("Роли добавились в лог");
     }
 
@@ -74,31 +74,34 @@ public class DataInitializer {
     }
 
     private void initUsers() {
+
+
         AbstractUser admin = new Admin();
-        admin.setFirstName("Viktor");
-        admin.setLastName("Lipin");
+        admin.setFirstName("Admin");
+        admin.setLastName("Adminov");
         admin.setAge(35);
-        admin.setEmail("tyz_ft@list.ru");
-        admin.setPassword("lipin");
+        admin.setEmail("admin@mail.ru");
+        admin.setPassword("admin");
 
         AbstractUser airlineManager = new AirlineManager();
-        airlineManager.setFirstName("Anna");
-        airlineManager.setLastName("Ivanova");
+        airlineManager.setFirstName("Manager");
+        airlineManager.setLastName("Managerov");
         airlineManager.setAge(25);
-        airlineManager.setEmail("ann@mail.ru");
-        airlineManager.setPassword("ivanova");
+        airlineManager.setEmail("airlinemanager@mail.ru");
+        airlineManager.setPassword("airlineManager");
 
         AbstractUser user = new User();
-        user.setFirstName("Oleg");
-        user.setLastName("Olegov");
+        user.setFirstName("User");
+        user.setLastName("Userov");
         user.setAge(23);
-        user.setEmail("asd_ft@list.ru");
+        user.setEmail("user@mail.ru");
         user.setPassword("user");
 
-        userService.addUser(airlineManager);
-        userService.addUser(admin);
-        userService.addUser(user);
 
-        System.out.println("initUser сработал!");
+        applicationUserService.addUser(admin);
+        applicationUserService.addUser(airlineManager);
+        applicationUserService.addUser(user);
+
+        System.out.println("Пользователи приложения добавлены в БД");
     }
 }

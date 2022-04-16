@@ -4,9 +4,13 @@ import app.util.SuccessUserHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.core.GrantedAuthorityDefaults;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -15,15 +19,18 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @Configuration
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final PasswordEncoder passwordEncoder;
     private final SuccessUserHandler successUserHandler;
+    private final UserDetailsService userDetailsService;
 
     @Autowired
-    public WebSecurityConfig(PasswordEncoder passwordEncoder, SuccessUserHandler successUserHandler) {
+    public WebSecurityConfig(PasswordEncoder passwordEncoder, SuccessUserHandler successUserHandler, UserDetailsService userDetailsService) {
         this.passwordEncoder = passwordEncoder;
         this.successUserHandler = successUserHandler;
+        this.userDetailsService = userDetailsService;
     }
 
 
@@ -32,7 +39,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/**").hasAnyRole("ADMIN", "AIRLINE_MANAGER", "USER")
+                .antMatchers("/").permitAll()
+                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/manager").hasRole("AIRLINE_MANAGER")
+                .antMatchers("/user").hasRole("USER")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -44,50 +54,26 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-    @Bean
-    @Override
-    public UserDetailsService userDetailsService() {
-
-        UserDetails admin =
-                User.builder()
-                        .username("admin")
-                        .password(passwordEncoder.encode("admin"))
-                        .roles("ADMIN")
-                        .build();
-
-        UserDetails airlineManager =
-                User.builder()
-                        .username("airlineManager")
-                        .password(passwordEncoder.encode("airlineManager"))
-                        .roles("AIRLINE_MANAGER")
-                        .build();
-
-        UserDetails user =
-                User.builder()
-                        .username("user")
-                        .password(passwordEncoder.encode("user"))
-                        .roles("USER")
-                        .build();
-
-
-        return new InMemoryUserDetailsManager(admin, airlineManager, user);
-    }
-
 
 // TODO доделать, когда будет ясность по юзерам и БД
 
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.authenticationProvider(daoAuthenticationProvider());
-//    }
-//
-//    @Bean
-//    protected DaoAuthenticationProvider daoAuthenticationProvider() {
-//        DaoAuthenticationProvider daoAuthenticationProvider =
-//                new DaoAuthenticationProvider();
-//        daoAuthenticationProvider.setPasswordEncoder(passwordEncoder);
-//        daoAuthenticationProvider.setUserDetailsService(userDetailsService);
-//        return daoAuthenticationProvider;
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.authenticationProvider(daoAuthenticationProvider());
+    }
+
+    @Bean
+    protected DaoAuthenticationProvider daoAuthenticationProvider() {
+        DaoAuthenticationProvider daoAuthenticationProvider =
+                new DaoAuthenticationProvider();
+        daoAuthenticationProvider.setPasswordEncoder(passwordEncoder);
+        daoAuthenticationProvider.setUserDetailsService(userDetailsService);
+        return daoAuthenticationProvider;
+    }
+
+//        @Bean
+//        GrantedAuthorityDefaults grantedAuthorityDefaults() {
+//        return new GrantedAuthorityDefaults(""); // Remove the ROLE_ prefix
 //    }
 
 }

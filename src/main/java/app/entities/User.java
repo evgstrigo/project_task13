@@ -16,15 +16,10 @@ import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue(value = "user")
-@AllArgsConstructor
+@NoArgsConstructor
 @Setter
 @Getter
 @JsonDeserialize(as = User.class)
 public class User extends AbstractUser {
-
-    @Override
-    public void initMethod(@Qualifier(value = "userRole") ApplicationUserRole applicationUserRole) {
-        this.setRole(applicationUserRole);
-    }
 
 }

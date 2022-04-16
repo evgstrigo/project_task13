@@ -1,7 +1,7 @@
 package app.controllers;
 
 import app.entities.AbstractUser;
-import app.services.UserService;
+import app.services.ApplicationUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,17 +20,17 @@ import java.util.List;
 @Api(tags = "User Controller")
 public class UserController {
 
-    private final UserService userService;
+    private final ApplicationUserService applicationUserService;
 
     @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
+    public UserController(ApplicationUserService applicationUserService) {
+        this.applicationUserService = applicationUserService;
     }
 
     @ApiOperation("Get all Users")
     @GetMapping
     public ResponseEntity<?> getAllUsers() {
-        List<AbstractUser> allUsersFromDb = userService.findAll();
+        List<AbstractUser> allUsersFromDb = applicationUserService.findAll();
         return allUsersFromDb != null
                 ? new ResponseEntity<>(allUsersFromDb, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -39,7 +39,7 @@ public class UserController {
     @ApiOperation("Get User by id")
     @GetMapping("/{id}")
     public ResponseEntity<?> getUserById(@PathVariable Long id) throws Exception {
-        AbstractUser user = userService.findUserById(id);
+        AbstractUser user = applicationUserService.findUserById(id);
         return user != null
                 ? new ResponseEntity<>(user, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -48,8 +48,8 @@ public class UserController {
     @ApiOperation("Create User")
     @PostMapping
     public ResponseEntity<?> createUser(@RequestBody AbstractUser user) {
-        userService.addUser(user);
-        AbstractUser userFromDb = userService.findUserByFirstName(user.getFirstName());
+        applicationUserService.addUser(user);
+        AbstractUser userFromDb = applicationUserService.findUserByFirstName(user.getFirstName());
         return userFromDb != null
                 ? new ResponseEntity<>(userFromDb, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -58,14 +58,14 @@ public class UserController {
     @ApiOperation("Update User")
     @PutMapping
     public ResponseEntity<?> updateUser(@RequestBody AbstractUser user) throws Exception {
-        userService.updateUser(user);
+        applicationUserService.updateUser(user);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @ApiOperation("Delete User by id")
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteUser(@PathVariable Long id) throws Exception {
-        userService.deleteUser(id);
+        applicationUserService.deleteUser(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

@@ -3,14 +3,15 @@ package app.util;
 import app.entities.ApplicationUserRole;
 import app.services.ApplicationUserRoleService;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ApplicationUserRolesCreator {
+public class ApplicationUserRolesUtil {
 
-    private final ApplicationUserRoleService applicationUserRoleService;
+    private ApplicationUserRoleService applicationUserRoleService;
 
-    public ApplicationUserRolesCreator(ApplicationUserRoleService applicationUserRoleService) {
+    public ApplicationUserRolesUtil(ApplicationUserRoleService applicationUserRoleService) {
         this.applicationUserRoleService = applicationUserRoleService;
     }
 
@@ -27,21 +28,23 @@ public class ApplicationUserRolesCreator {
         applicationUserRoleService.save(admin);
         applicationUserRoleService.save(airline_manager);
         applicationUserRoleService.save(user);
+
         System.out.println("Роли пользователей добавлены в БД");
     }
 
+
     @Bean("adminRole")
-    public ApplicationUserRole getAdminRole() {
-       return applicationUserRoleService.findApplicationUserRoleByValue("ADMIN");
+    public ApplicationUserRole getAdminRoleFromDB() {
+        return applicationUserRoleService.findApplicationUserRoleByValue("ADMIN");
     }
 
     @Bean("airlineManagerRole")
-    public ApplicationUserRole getAirlineManagerRole() {
+    public ApplicationUserRole getAirlineManagerRoleFromDB() {
         return applicationUserRoleService.findApplicationUserRoleByValue("AIRLINE_MANAGER");
     }
 
     @Bean("userRole")
-    public ApplicationUserRole getUserRole() {
+    public ApplicationUserRole getUserRoleFromDB() {
         return applicationUserRoleService.findApplicationUserRoleByValue("USER");
     }
 

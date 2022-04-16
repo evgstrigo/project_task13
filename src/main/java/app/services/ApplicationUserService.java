@@ -9,7 +9,7 @@ import java.util.List;
  * Интерфейс описывающий основные методы над User
  */
 
-public interface UserService {
+public interface ApplicationUserService {
     /**
      * Поиск всех пользователей
      */
