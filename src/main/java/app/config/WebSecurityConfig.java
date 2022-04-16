@@ -17,6 +17,15 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
+
+/**
+ * Главный конфигурационный класс Spring Security<br>
+ * Мы используем formLogin.<br>
+ * Информация о пользователях хранится в БД (daoAuthentificationProvider)<br>
+ * Пароли шифруются<br>
+ * Ссылки и списки antMatcher'ов могут корректироваться
+ */
+
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -40,9 +49,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
-                .antMatchers("/admin/**").hasRole("ADMIN")
-                .antMatchers("/manager").hasRole("AIRLINE_MANAGER")
-                .antMatchers("/user").hasRole("USER")
+                /**
+                 * TODO см. ниже
+                 * Сюда в паттерны потом нужно будет дописать ссылки на доступ к соответствущим контроллерам
+                 */
+                .antMatchers("/admin/**", "api/users/**").hasRole("ADMIN")
+                .antMatchers("/manager/**").hasRole("AIRLINE_MANAGER")
+                .antMatchers("/user/**").hasRole("USER")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -54,8 +67,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-
-// TODO доделать, когда будет ясность по юзерам и БД
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -70,6 +81,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         daoAuthenticationProvider.setUserDetailsService(userDetailsService);
         return daoAuthenticationProvider;
     }
+
+    /**
+     * Можем удалить префикс "ROLE_" из названия каждой роли. Пока что не активен.
+     */
 
 //        @Bean
 //        GrantedAuthorityDefaults grantedAuthorityDefaults() {

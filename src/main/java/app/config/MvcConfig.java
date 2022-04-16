@@ -4,6 +4,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+/**
+ * Используется для Spring Security.<br>
+ * Здесь мы настраиваем отображение определённых view в зависимости от ссылки,
+ * по которой переходит пользователь<br>
+ * "Стандартные" редиректы прописаны в классе Util.SuccessUserHandler
+ */
+
 @Configuration
 public class MvcConfig implements WebMvcConfigurer {
 

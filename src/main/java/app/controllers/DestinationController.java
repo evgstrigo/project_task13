@@ -4,6 +4,7 @@ import app.entities.Destination;
 import app.services.DestinationService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 @Api(tags = "Destination Controller")
 @RestController
 @RequestMapping("api/destinations")
+@Log4j2
 public class DestinationController {
     private final DestinationService destinationService;
 
@@ -33,6 +35,7 @@ public class DestinationController {
     @ApiOperation("Get destination by id") 
     @GetMapping("/{id}")
     public ResponseEntity<Destination> getDestinationById(@PathVariable("id") Long id) {
+        log.info("getDestinationById started");
         Destination destination = destinationService.findById(id);
         return destination != null
                 ? new ResponseEntity<>(destination, HttpStatus.OK)
@@ -47,6 +50,7 @@ public class DestinationController {
     @ApiOperation("Get destination by Sity name")
     @GetMapping()
     public ResponseEntity<Destination> getDestinationBySity(@RequestParam(value = "sity") String sity) {
+        log.info("getDestinationBySity started");
         final Destination destination = destinationService.findBySity(sity);
         return destination != null
                 ? new ResponseEntity<>(destination, HttpStatus.OK)
@@ -61,6 +65,7 @@ public class DestinationController {
     @ApiOperation("Create new destination")
     @PostMapping
     public ResponseEntity<?> addDestination(@RequestBody Destination destination) {
+        log.info("addDestination started");
         destinationService.save(destination);
         Destination destination1 = destinationService.findBySity(destination.getSity());
         return destination1 != null
@@ -76,6 +81,7 @@ public class DestinationController {
     @ApiOperation("Update destination")
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@PathVariable("id") Long id, @RequestBody Destination destination) {
+        log.info("update started");
         destination.setId(id);
         destinationService.save(destination);
         Destination destination1 = destinationService.findById(id);

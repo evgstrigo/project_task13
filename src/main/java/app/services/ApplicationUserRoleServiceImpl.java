@@ -33,8 +33,8 @@ public class ApplicationUserRoleServiceImpl implements ApplicationUserRoleServic
     }
 
     @Override
-    public ApplicationUserRole findApplicationUserRoleByValue(String value) {
-        return applicationUserRoleRepository.findApplicationUserRoleByValue(value);
+    public ApplicationUserRole findFirstByValue(String value) {
+        return applicationUserRoleRepository.findFirstByValue(value);
     }
 
     @Override

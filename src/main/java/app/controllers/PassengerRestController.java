@@ -5,6 +5,7 @@ import app.services.PassengerService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,6 +23,7 @@ import java.util.List;
 @Api(tags = "Passengers", description = "Passenger control")
 @RestController
 @RequestMapping("/api/passengers")
+@Log4j2
 public class PassengerRestController {
 
     /**
@@ -46,6 +48,7 @@ public class PassengerRestController {
     @ApiOperation(value = "Getting all passengers list from DB")
     @GetMapping()
     public List<Passenger> getAllPassengers() {
+        log.info("getAllPassengers started");
         return passengerService.findAll();
     }
 
@@ -59,6 +62,7 @@ public class PassengerRestController {
     @GetMapping("/{id}")
     public Passenger getPassengerById(
             @PathVariable @ApiParam(value = "Passenger's id", example = "1", required = true) long id) {
+        log.info("getPassengerById started");
         return passengerService.findById(id);
     }
 
@@ -70,6 +74,7 @@ public class PassengerRestController {
     @ApiOperation(value = "Adding new passenger to DB")
     @PostMapping()
     public void addNewPassenger(@RequestBody Passenger passenger) {
+        log.info("addNewPassenger started");
         passengerService.save(passenger);
     }
 
@@ -81,6 +86,7 @@ public class PassengerRestController {
     @ApiOperation(value = "Updating passenger from DB")
     @PutMapping()
     public void updatePassenger(@RequestBody Passenger passenger) {
+        log.info("updatePassenger started");
         passengerService.save(passenger);
     }
 

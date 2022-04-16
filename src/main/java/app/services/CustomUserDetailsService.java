@@ -7,6 +7,12 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
+/**
+ * Класс для использования в Spring Security<br>
+ * Позволяет искать Юзера в БД по введённому username<br>
+ * В нашем проекте usernamе'ом является поле email в классе AbstractApplicationUser
+ */
+
 @Component
 public class CustomUserDetailsService implements UserDetailsService {
 

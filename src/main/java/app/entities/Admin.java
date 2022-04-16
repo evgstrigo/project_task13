@@ -1,21 +1,16 @@
 package app.entities;
 
-import app.services.ApplicationUserRoleService;
-import app.util.ApplicationUserRolesUtil;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.*;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Transient;
 
 /**
- * Класс потомок, также используем lombok для простоты настройки.
- *
- * @JsonDeserialize используется для настройки десериализации Json.
- * @DiscriminatorValue в таблице базы данных User будет столбец admin указывающий
+ * Класс потомок от AbstractApplicationUser<br>
+ * При сохранении в БД экземпляра этого класса в сервисе ему будет присвоена роль ADMIN<br>
+ *  JsonDeserialize используется для настройки десериализации Json.<br>
+ *  DiscriminatorValue в таблице базы данных AbstractApplicationUser будет столбец admin указывающий<br>
  * на конкретный класс потомок.
  */
 
@@ -25,6 +20,6 @@ import javax.persistence.Transient;
 @Setter
 @Getter
 @JsonDeserialize(as = Admin.class)
-public class Admin extends AbstractUser {
+public class Admin extends AbstractApplicationUser {
 
 }

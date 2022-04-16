@@ -1,6 +1,6 @@
 package app.controllers;
 
-import app.entities.AbstractUser;
+import app.entities.AbstractApplicationUser;
 import app.entities.Admin;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.springtestdbunit.TransactionDbUnitTestExecutionListener;
@@ -36,7 +36,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 })
 @DatabaseSetup(value = "user.xml")
 @DatabaseTearDown(value = "user.xml")
-class AbstractUserControllerTest {
+class AbstractUserRestControllerTest {
     @Autowired
     private MockMvc mockMvc;
     @Autowired
@@ -61,7 +61,7 @@ class AbstractUserControllerTest {
 
     @Test
     void createUser() throws Exception {
-        AbstractUser user = new Admin();
+        AbstractApplicationUser user = new Admin();
         user.setId(3L);
         user.setFirstName("Petr");
         user.setLastName("Petrov");
@@ -76,16 +76,16 @@ class AbstractUserControllerTest {
 
     @Test
     void updateUser() throws Exception {
-        AbstractUser abstractUser = new Admin();
-        abstractUser.setId(1L);
-        abstractUser.setFirstName("Vladimir");
-        abstractUser.setLastName("Zhirinovsky");
-        abstractUser.setAge(75);
-        abstractUser.setEmail("zhirinovsky@gmail.com");
-        abstractUser.setPassword("petrov");
+        AbstractApplicationUser abstractApplicationUser = new Admin();
+        abstractApplicationUser.setId(1L);
+        abstractApplicationUser.setFirstName("Vladimir");
+        abstractApplicationUser.setLastName("Zhirinovsky");
+        abstractApplicationUser.setAge(75);
+        abstractApplicationUser.setEmail("zhirinovsky@gmail.com");
+        abstractApplicationUser.setPassword("petrov");
 
         mockMvc.perform(put(URL).contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(abstractUser)))
+                        .content(objectMapper.writeValueAsString(abstractApplicationUser)))
                 .andExpect(status().isOk());
 
         mockMvc.perform(get(URL + "/1"))

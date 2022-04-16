@@ -1,44 +1,40 @@
 package app.services;
 
 
-import app.entities.AbstractUser;
+import app.entities.AbstractApplicationUser;
 
 import java.util.List;
 
 /**
- * Интерфейс описывающий основные методы над User
+ * Интерфейс, описывающий основные методы над ApplicationUser
  */
 
 public interface ApplicationUserService {
     /**
      * Поиск всех пользователей
      */
-    List<AbstractUser> findAll();
+    List<AbstractApplicationUser> findAll();
 
     /**
      * поиск по идентификатору
      */
-    AbstractUser findUserById(Long id) throws Exception;
+    AbstractApplicationUser findUserById(Long id) throws Exception;
 
-    /**
-     * Поиск по имени пользователя
-     */
-    AbstractUser findUserByFirstName(String name);
 
     /**
      * Поиск по электронной почте пользователя
      */
-    AbstractUser findUserByEmail(String email);
+    AbstractApplicationUser findUserByEmail(String email);
 
     /**
      * Сохранение пользователя
      */
-    void addUser(AbstractUser user);
+    void addUser(AbstractApplicationUser user);
 
     /**
      * Обновление пользователя
      */
-    void updateUser(AbstractUser user);
+    void updateUser(AbstractApplicationUser user);
 
     /**
      * Удаление пользователя

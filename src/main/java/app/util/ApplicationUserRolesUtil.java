@@ -6,6 +6,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
+/**
+ * Утилитный класс для работы с ролями пользователя для Spring Security.
+ */
+
+
 @Component
 public class ApplicationUserRolesUtil {
 
@@ -16,6 +21,10 @@ public class ApplicationUserRolesUtil {
     }
 
 
+    /**
+     * Метод создаёт 3 роли (админ, менеджер и юзер) и сохраняет их в отдельной таблице в БД
+     * @param applicationUserRoleService
+     */
     public static void createAllRolesAndSaveInDB(ApplicationUserRoleService applicationUserRoleService) {
 
         ApplicationUserRole admin = new ApplicationUserRole("ADMIN");
@@ -32,20 +41,5 @@ public class ApplicationUserRolesUtil {
         System.out.println("Роли пользователей добавлены в БД");
     }
 
-
-    @Bean("adminRole")
-    public ApplicationUserRole getAdminRoleFromDB() {
-        return applicationUserRoleService.findApplicationUserRoleByValue("ADMIN");
-    }
-
-    @Bean("airlineManagerRole")
-    public ApplicationUserRole getAirlineManagerRoleFromDB() {
-        return applicationUserRoleService.findApplicationUserRoleByValue("AIRLINE_MANAGER");
-    }
-
-    @Bean("userRole")
-    public ApplicationUserRole getUserRoleFromDB() {
-        return applicationUserRoleService.findApplicationUserRoleByValue("USER");
-    }
 
 }

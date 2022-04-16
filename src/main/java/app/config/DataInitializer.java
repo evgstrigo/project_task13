@@ -76,31 +76,42 @@ public class DataInitializer {
     private void initUsers() {
 
 
-        AbstractUser admin = new Admin();
+        AbstractApplicationUser admin = new Admin();
         admin.setFirstName("Admin");
         admin.setLastName("Adminov");
         admin.setAge(35);
         admin.setEmail("admin@mail.ru");
         admin.setPassword("admin");
 
-        AbstractUser airlineManager = new AirlineManager();
+        AbstractApplicationUser airlineManager = new AirlineManager();
         airlineManager.setFirstName("Manager");
         airlineManager.setLastName("Managerov");
         airlineManager.setAge(25);
         airlineManager.setEmail("airlinemanager@mail.ru");
         airlineManager.setPassword("airlineManager");
 
-        AbstractUser user = new User();
+        AbstractApplicationUser user = new User();
         user.setFirstName("User");
         user.setLastName("Userov");
         user.setAge(23);
         user.setEmail("user@mail.ru");
         user.setPassword("user");
 
+        AbstractApplicationUser user2 = new User();
+        user2.setFirstName("User2");
+        user2.setLastName("Userov2");
+        user2.setAge(23);
+        user2.setEmail("user2@mail.ru");
+        user2.setPassword("user2");
+
+
 
         applicationUserService.addUser(admin);
         applicationUserService.addUser(airlineManager);
         applicationUserService.addUser(user);
+        applicationUserService.addUser(user2);
+
+
 
         System.out.println("Пользователи приложения добавлены в БД");
     }
