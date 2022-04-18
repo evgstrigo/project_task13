@@ -48,7 +48,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/").permitAll()
+//                .antMatchers("/").permitAll()
                 /**
                  * TODO см. ниже
                  * Сюда в паттерны потом нужно будет дописать ссылки на доступ к соответствущим контроллерам
